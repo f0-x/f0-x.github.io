@@ -1,11 +1,9 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
-        <title>🔺 Welcome to My Blog 🔻</title>
-        <link>https://f0-x.github.io/</link>
-        <description>Welcome to my Code Blog</description>
-        <generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Sun, 03 Jul 2022 00:00:00 &#43;0545</lastBuildDate>
-            <atom:link href="https://f0-x.github.io/index.xml" rel="self" type="application/rss+xml" />
-        <item>
+        <title>css - Tag - 🔺 Welcome to My Blog 🔻</title>
+        <link>https://f0-x.github.io/tags/css/</link>
+        <description>css - Tag - 🔺 Welcome to My Blog 🔻</description>
+        <generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Sun, 03 Jul 2022 00:00:00 &#43;0545</lastBuildDate><atom:link href="https://f0-x.github.io/tags/css/" rel="self" type="application/rss+xml" /><item>
     <title>Beautiful Skeleton Animation using TailwindCSS</title>
     <link>https://f0-x.github.io/tailwind-skeleton/</link>
     <pubDate>Sun, 03 Jul 2022 00:00:00 &#43;0545</pubDate><guid>https://f0-x.github.io/tailwind-skeleton/</guid>
