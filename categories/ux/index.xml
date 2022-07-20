@@ -4,12 +4,12 @@
         <link>https://f0-x.github.io/categories/ux/</link>
         <description>UX - Category - 🔺 Welcome to My Blog 🔻</description>
         <generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Sun, 03 Jul 2022 00:00:00 &#43;0545</lastBuildDate><atom:link href="https://f0-x.github.io/categories/ux/" rel="self" type="application/rss+xml" /><item>
-    <title>Beautiful Skeleton Animation using TailwindCSS</title>
+    <title>✨Shiny Skeleton Animation using TailwindCSS💨</title>
     <link>https://f0-x.github.io/tailwind-skeleton/</link>
     <pubDate>Sun, 03 Jul 2022 00:00:00 &#43;0545</pubDate><guid>https://f0-x.github.io/tailwind-skeleton/</guid>
     <description><![CDATA[<div class="featured-image">
                 <img src="/assets/featured-image.gif" referrerpolicy="no-referrer">
-            </div>Content loaders, skeleton screens, ghost elements, and content placeholders. These are the names given to the effect we&rsquo;ll be exploring today. Many companies, such as Linkedin, Facebook, Youtube and Slack, use this effect in their apps and websites, as you may have noticed. As much as we developers want our websites to load as quickly as possible, there are times when a lot of data needs to be rendered on the page, so Skeleton screens are a great option.]]></description>
+            </div>Content loaders, skeleton screens, ghost elements, and content placeholders. These are the names given to the effect we&rsquo;ll be exploring today. Many companies, such as LinkedIn, Facebook, YouTube and Slack, use this effect in their apps and websites, as you may have noticed. As much as we developers want our websites to load as quickly as possible, there are times when a lot of data needs to be rendered on the page, so Skeleton screens are a great option.]]></description>
 </item>
 </channel>
 </rss>
