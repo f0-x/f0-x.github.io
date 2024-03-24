@@ -1,0 +1,378 @@
+baseURL = 'https://f0-x.github.io/blog/'
+languageCode = 'en-us'
+title = '🔺 Welcome to My Blog 🔻'
+
+defaultContentLanguage = "en"
+
+# Change the default theme to be use when building the site with Hugo
+theme = "FeelIt"
+
+# whether to use robots.txt
+enableRobotsTXT = true
+# whether to use git commit log
+enableGitInfo = true
+useContentDirGitInfo = true
+# whether to use emoji code
+enableEmoji = true
+
+[params]
+  # FeelIt theme version
+  version = "1.0.X"
+  # site description
+  description = "Welcome to my Code Blog"
+  # site keywords
+  keywords = ["Programming", "Code"]
+  # site default theme ("light", "dark", "auto")
+  defaultTheme = "auto"
+  # public git repo url only then enableGitInfo is true
+  gitRepo = "https://github.com/f0-x/f0-x.github.io"
+
+  # beeery daangerrrrouss config breaks site
+  # which hash function used for SRI, when empty, no SRI is used
+  # ("sha256", "sha384", "sha512", "md5")
+  # fingerprint = "sha512"
+
+  #date format
+  dateFormat = "2006-01-02"
+
+[author]
+  name = "Sushant Chaudhary Rajbanshi"
+
+[menu]
+  [[menu.main]]
+    identifier = "posts"
+    # you can add extra information before the name (HTML format is supported), such as icons
+    pre = ""
+    # you can add extra information after the name (HTML format is supported), such as icons
+    post = ""
+    name = "Posts"
+    url = "/posts/"
+    # title will be shown when you hover on this menu link
+    title = ""
+    weight = 1
+  [[menu.main]]
+    identifier = "tags"
+    pre = ""
+    post = ""
+    name = "Tags"
+    url = "/tags/"
+    title = ""
+    weight = 2
+  [[menu.main]]
+    identifier = "categories"
+    pre = ""
+    post = ""
+    name = "Categories"
+    url = "/categories/"
+    title = ""
+    weight = 3
+  [[menu.main]]
+    identifier = "about"
+    pre = ""
+    post = ""
+    name = "About Me"
+    url = "http://chaudharysushant.com.np"
+    title = ""
+    weight = 4
+
+# App icon config
+  [params.app]
+    # optional site title override for the app when added to an iOS home screen or Android launcher
+    title = "🧿p₴γ४"
+    # whether to omit favicon resource links
+    noFavicon = false
+    # modern SVG favicon to use in place of older style .png and .ico files
+    svgFavicon = ""
+    # Android browser theme color
+    themeColor = "#ffffff"
+    # Safari mask icon color
+    iconColor = "#5bbad5"
+    # Windows v8-10 tile color
+    tileColor = "#da532c"
+
+# Search config
+  [params.search]
+    enable = true
+    # type of search engine ("lunr", "algolia")
+    type = "lunr"
+    # max index length of the chunked content
+    contentLength = 4000
+    # placeholder of the search bar
+    placeholder = ""
+# max number of results length
+    maxResultLength = 10
+# snippet length of the result
+    snippetLength = 30
+# HTML tag name of the highlight part in results
+    highlightTag = "em"
+# whether to use the absolute URL based on the baseURL in search index
+    absoluteURL = false
+    [params.search.algolia]
+      index = ""
+      appID = ""
+      searchKey = ""
+
+#  Header title config
+    [params.header.title]
+      # URL of the LOGO
+      logo = ""
+      # title name
+      name = "❛🧿p₴γ४❜"
+      # you can add extra information before the name (HTML format is supported), such as icons
+      pre = ""
+      # you can add extra information after the name (HTML format is supported), such as icons
+      post = ""
+      # whether to use typeit animation for title name
+      typeit = false
+      # whether to show RSS icon
+      rss = true
+
+      # Footer config
+  [params.footer]
+    enable = true
+    # Custom content (HTML format is supported)
+    custom = ''
+    # whether to show Hugo and theme info
+    hugo = false
+ # whether to show copyright info
+    copyright = true
+# whether to show the author
+    author = true
+    # Site creation time
+    since = 2021
+    # ICP info only in China (HTML format is supported)
+    icp = ""
+    # license info (HTML format is supported)
+    license = '<a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a>'
+
+ # Section (all posts) page config
+  [params.section]
+    # special amount of posts in each section page
+    paginate = 20
+    # date format (month and day)
+    dateFormat = "01-02"
+    # amount of RSS pages
+    rss = 10
+
+      # List (category or tag) page config
+  [params.list]
+    # special amount of posts in each list page
+    paginate = 20
+    # date format (month and day)
+    dateFormat = "01-02"
+    # amount of RSS pages
+    rss = 10
+
+    # Home page config
+  [params.home]
+    # amount of RSS pages
+    rss = 10
+    # Home page profile
+    [params.home.profile]
+      enable = true
+      # Gravatar Email for preferred avatar in home page
+      gravatarEmail = ""
+      # URL of avatar shown in home page
+      avatarURL = "/images/avatar.png"
+      # FeelIt CHANGED | 0.2.7
+      # title shown in home page (HTML format is supported)
+      title = "House of pscy4"
+      # subtitle shown in home page
+      subtitle = "we discuss only computers here"
+      # whether to use typeit animation for subtitle
+      typeit = true
+      # whether to show social links
+      social = true
+      # FeelIt NEW | 0.2.0
+      #disclaimer (HTML format is supported)
+      disclaimer = "Contents published here are only for Educational purposes"
+    # Home page posts
+    [params.home.posts]
+      enable = true
+      # special amount of posts in each home posts page
+      paginate = 6
+      # FeelIt CHANGED | 1.0.1
+      # display image-preview
+      imagePreview = true
+      # FeelIt DELETED | 0.2.0
+      # replaced with hiddenFromHomePage in params.page
+      # default behavior when you don't set "hiddenFromHomePage" in front matter
+      defaultHiddenFromHomePage = false
+
+    # FeelIt CHANGED | 1.0.1
+    # oEmbed config
+  [params.oembed]
+    # Privacy config (https://gohugo.io/about/hugo-and-gdpr/)
+    privacy = true
+    [params.oembed.facebook]
+      # Facebook Aplication Identity and Client Token (<APPID>|<CLIENTTOKEN>)
+      #accessToken = ""
+    [params.oembed.twitter]
+      enableDNT = true 
+
+  [params.social]
+    GitHub = "f0-x"
+    Linkedin = "maama"
+    Twitter = "l3ugfairy"
+    RSS = true 
+    Email = "sushantchaudhary3@gmail.com"
+    [params.social.resume]
+      prefix = "https://drive.google.com"
+      title = "C.V/Resume"
+      id = "file/d/1ou6br6eDIxSBcXwoLEE5b-lxhi5TlB5D/view?usp=sharing"
+
+  # FeelIt CHANGED | 0.2.0
+# Page config
+  [params.page]
+    # FeelIt NEW | 0.2.0
+# whether to hide a page from home page
+    hiddenFromHomePage = false
+    # FeelIt NEW | 0.2.0
+# whether to hide a page from search results
+    hiddenFromSearch = false
+    # FeelIt NEW | 0.2.0
+# whether to enable twemoji
+    twemoji = false
+    # whether to enable lightgallery
+    lightgallery = true
+    # FeelIt NEW | 0.2.0
+# whether to enable the ruby extended syntax
+    ruby = true
+    # FeelIt NEW | 0.2.0
+# whether to enable the fraction extended syntax
+    fraction = true
+    # FeelIt NEW | 0.2.0
+# whether to enable the fontawesome extended syntax
+    fontawesome = true
+    # FeelIt NEW | 1.0.0
+# whether to use the fontawesome as cdn source
+    cdnfontawesome = true
+    # whether to show link to Raw Markdown content of the content
+    linkToMarkdown = true
+    # FeelIt NEW | 1.0.0
+# whether to show link to improve the article
+    improveArticle = ""
+    # FeelIt NEW | 0.2.4
+# whether to show the full text content in RSS
+    rssFullText = false
+    # FeelIt NEW | 0.2.0
+ # Table of the contents config
+    [params.page.toc]
+      # whether to enable the table of the contents
+      enable = true
+      # FeelIt NEW | 0.2.9
+# whether to keep the static table of the contents in front of the post
+      keepStatic = false
+      # whether to make the table of the contents in the sidebar automatically collapsed
+      auto = false
+    # FeelIt CHANGED | 0.2.0
+    
+# KaTeX mathematical formulas
+    [params.page.math]
+      enable = true
+      # default block delimiter is $$ ... $$ and \\[ ... \\]
+      blockLeftDelimiter = ""
+      blockRightDelimiter = ""
+      # default inline delimiter is $ ... $ and \\( ... \\)
+      inlineLeftDelimiter = ""
+      inlineRightDelimiter = ""
+      # KaTeX extension copy_tex
+      copyTex = true
+      # KaTeX extension mhchem
+      mhchem = true
+    # FeelIt NEW | 0.2.0
+# Code config
+    [params.page.code]
+      # whether to show the copy button of the code block
+      copy = true
+      # the maximum number of lines of displayed code by default
+      maxShownLines = 10
+
+[params.page.share]
+      enable = true
+      Twitter = true
+      Facebook = true
+      Linkedin = true
+      Reddit = true
+
+   # FeelIt CHANGED | 1.0.0
+ # Comment config
+    [params.page.comment]
+      enable = true
+# Gitalk comment config
+      [params.page.comment.gitalk]
+        # FeelIt NEW | 0.1.1
+        enable = true
+        owner = "f0-x"
+        repo = "f0-x.github.io"
+        clientId = "60eb8e8e31fc637ce015"
+        clientSecret = "4a6eaba4e2d62428a8a1c85347e2d5e873a65898"
+        distractionFreeMode = true
+
+ # FeelIt NEW | 0.2.5
+ # TypeIt config
+  [params.typeit]
+    # typing speed between each step (measured in milliseconds)
+    speed = 100
+    startDelay = 900
+    lifeLike = true
+    # blinking speed of the cursor (measured in milliseconds)
+    cursorSpeed = 1000
+    # character used for the cursor (HTML format is supported)
+    cursorChar = "_"
+    # cursor duration after typing finishing (measured in milliseconds, "-1" means unlimited)
+    duration = -1
+
+  # FeelIt NEW | 0.2.7
+ # Cookie consent config
+  [params.cookieconsent]
+    enable = true
+    # text strings used for Cookie consent banner
+    [params.cookieconsent.content]
+      message = "Notice. This blog uses cookies to provide necessary website functionality, improve your experience and analyze our traffic. By using our website, you agree to our Privacy Policy and our cookies usage."
+      dismiss = "Agree"
+      link = ""
+
+  # FeelIt NEW | 0.2.8
+ # Compatibility config
+  [params.compatibility]
+    # whether to use Polyfill.io to be compatible with older browsers
+    polyfill = true
+    # whether to use object-fit-images to be compatible with older browsers
+    objectFit = true
+
+# Markup related config in Hugo
+[markup]
+  # Syntax Highlighting
+  [markup.highlight]
+    codeFences = true
+    guessSyntax = true
+    lineNos = true
+    lineNumbersInTable = true
+    # false is a necessary configuration
+    # (https://github.com/khusika/FeelIt/issues/158)
+    noClasses = false
+  # Goldmark is from Hugo 0.60 the default library used for Markdown
+  [markup.goldmark]
+    [markup.goldmark.extensions]
+      definitionList = true
+      footnote = true
+      linkify = true
+      strikethrough = true
+      table = true
+    [markup.goldmark.renderer]
+      unsafe = true
+
+# Options to make output .md files
+[outputFormats.MarkDown]
+  mediaType = "text/plain"
+  isPlainText = true
+  isHTML = false
+
+# Options to make hugo output files
+[outputs]
+  home = ["HTML", "RSS", "JSON"]
+  page = ["HTML"]
+  section = ["HTML", "RSS"]
+  taxonomy = ["HTML", "RSS"]
+  taxonomyTerm = ["HTML"]
