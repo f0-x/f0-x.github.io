@@ -1,9 +1,25 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
-        <title>My New Hugo Site</title>
+        <title>🔺 Welcome to My Blog 🔻</title>
         <link>https://f0-x.github.io/blog/</link>
-        <description>My New Hugo Site</description>
-        <generator>Hugo -- gohugo.io</generator><language>en</language>
+        <description>Welcome to my Code Blog</description>
+        <generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Sun, 03 Jul 2022 00:00:00 &#43;0545</lastBuildDate>
             <atom:link href="https://f0-x.github.io/blog/index.xml" rel="self" type="application/rss+xml" />
-        </channel>
+        <item>
+    <title>✨Shiny Skeleton Animation using TailwindCSS💨</title>
+    <link>https://f0-x.github.io/blog/posts/tailwind-skeleton/</link>
+    <pubDate>Sun, 03 Jul 2022 00:00:00 &#43;0545</pubDate><guid>https://f0-x.github.io/blog/posts/tailwind-skeleton/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="/blog/assets/featured-image.gif" referrerpolicy="no-referrer">
+            </div>Content loaders, skeleton screens, ghost elements, and content placeholders. These are the names given to the effect we&rsquo;ll be exploring today. Many companies, such as LinkedIn, Facebook, YouTube and Slack, use this effect in their apps and websites, as you may have noticed. As much as we developers want our websites to load as quickly as possible, there are times when a lot of data needs to be rendered on the page, so Skeleton screens are a great option.]]></description>
+</item>
+<item>
+    <title>My First Post</title>
+    <link>https://f0-x.github.io/blog/posts/first_post/</link>
+    <pubDate>Fri, 04 Feb 2022 17:12:57 &#43;0545</pubDate><guid>https://f0-x.github.io/blog/posts/first_post/</guid>
+    <description><![CDATA[Dummy First Post
+This is my first post body. I am excited.😎 😍
+7 8 9 10 11 12 13 14  #include &lt;stdio.h&gt; //include info about standard library int main() // define a function named main that receives no 	// argument values. {  printf(&#34;hello, world from Ox-Hugo\n&#34;); //main calls library function printf } // to print the sequence of characters; 	// \n represents a newline character    1  (message &#34;Hello World Cup&#34;)   Latex Section \[ c = \pm\sqrt{a^2 + b^2} \]]]></description>
+</item>
+</channel>
 </rss>
