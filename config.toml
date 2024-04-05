@@ -23,7 +23,7 @@ enableEmoji = true
   # site keywords
   keywords = ["Programming", "Code"]
   # site default theme ("light", "dark", "auto")
-  defaultTheme = "auto"
+  defaultTheme = "light"
   # public git repo url only then enableGitInfo is true
   gitRepo = "https://github.com/f0-x/blog"
 
@@ -78,7 +78,7 @@ enableEmoji = true
 # App icon config
   [params.app]
     # optional site title override for the app when added to an iOS home screen or Android launcher
-    title = "🧿p₴γ४"
+    title = "🧿"
     # whether to omit favicon resource links
     noFavicon = false
     # modern SVG favicon to use in place of older style .png and .ico files
@@ -117,7 +117,7 @@ enableEmoji = true
       # URL of the LOGO
       logo = ""
       # title name
-      name = "❛🧿p₴γ४❜"
+      name = "❛🧿❜"
       # you can add extra information before the name (HTML format is supported), such as icons
       pre = ""
       # you can add extra information after the name (HTML format is supported), such as icons
@@ -176,16 +176,16 @@ enableEmoji = true
       avatarURL = "./images/avatar.png"
       # FeelIt CHANGED | 0.2.7
       # title shown in home page (HTML format is supported)
-      title = "House of pscy4"
+      title = "Sushant Rajbanshi"
       # subtitle shown in home page
-      subtitle = "we discuss only computers here"
+      subtitle = "My code doesn't have bugs, it has undocumented features."
       # whether to use typeit animation for subtitle
       typeit = true
       # whether to show social links
       social = true
       # FeelIt NEW | 0.2.0
       #disclaimer (HTML format is supported)
-      disclaimer = "Contents published here are only for Educational purposes"
+      # disclaimer = "Contents published here are only for Educational purposes"
     # Home page posts
     [params.home.posts]
       enable = true
@@ -208,13 +208,13 @@ enableEmoji = true
       # Facebook Aplication Identity and Client Token (<APPID>|<CLIENTTOKEN>)
       #accessToken = ""
     [params.oembed.twitter]
-      enableDNT = true 
+      enableDNT = true
 
   [params.social]
     GitHub = "f0-x"
     Linkedin = "maama"
-    Twitter = "l3ugfairy"
-    RSS = true 
+    # Twitter = "l3ugfairy"
+    RSS = true
     Email = "sushantchaudhary3@gmail.com"
     [params.social.resume]
       prefix = "https://drive.google.com"
@@ -266,7 +266,7 @@ enableEmoji = true
       # whether to make the table of the contents in the sidebar automatically collapsed
       auto = false
     # FeelIt CHANGED | 0.2.0
-    
+
 # KaTeX mathematical formulas
     [params.page.math]
       enable = true
