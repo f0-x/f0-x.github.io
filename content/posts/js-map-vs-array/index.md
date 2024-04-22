@@ -1,39 +1,51 @@
 +++
-title = "Stop Using Find Method in JavaScript"
-publishDate = 2022-07-03T00:00:00+05:45
-lastmod = 2022-07-20T11:24:47+05:45
-tags = ["tailwind", "css"]
-categories = ["UI", "UX"]
+title = "ES6 Maps are very underrated!"
+publishDate = 2024-04-21T00:00:00+05:45
+lastmod = 2024-04-22T11:24:47+05:45
+tags = ["reactjs", "javascript","algorithms"]
+categories = ["algorithms", "frontend"]
 draft = false
-featuredImage = "images/c296f1e6ff165e57d2b7f7484876711ef0ca963b.jpeg"
-featuredImagePreview = "./posts/js-map-vs-array/images/c296f1e6ff165e57d2b7f7484876711ef0ca963b.jpeg"
+featuredImage = "images/maps-vs-array-feature-image.jpg"
+featuredImagePreview = "./posts/js-map-vs-array/images/maps-vs-array-feature-image-preview.jpg"
 +++
 
-First of all, we can say that the **Map** data structure, which many of us know but rarely or perhaps never use, is not as insignificant as it seems. In this article, we will focus on certain fundamental topics and clarify the purpose of the Map and when it can be useful to us.
+Javascript `Map` is a recently introduced data structure, hence it is not as widely understood as it would first appear, also is not as little as it first appears. We will start off with some fundamentals in this post and gradually head towards explaining the `Map`'s function as well as certain situations in which it may be helpful.
 
 
-What is Big O Notation?
+The Big :o: Notation
 -----------------------
 
 Understanding Big O Notation is crucial for analyzing the efficiency and scalability of algorithms and data structures. It allows developers to assess how algorithms will perform as the size of the input data increases. The notation provides a standardized way to express the worst-case scenario of an algorithm’s runtime in relation to the size of the input. As developers, it’s essential to choose algorithms and data structures with favorable time complexities to ensure efficient performance, especially when dealing with large datasets.
 
 When considering all this data, it becomes apparent that it’s best for the methods we use not to be dependent on the size of ’n’ data. While these operations may be fast enough to go unnoticed individually, combining multiple operations simultaneously or nested loops can significantly degrade the user experience.
 
-How does the find() method work?
+{{< admonition type=info title="Big O Analogy" open=true >}}
+Imagine you're a chef. **Big O Notation** is like a recipe that tells you how much more time you'll need if you decide to cook for a banquet instead of a family dinner. It's a way to measure the ***"heaviness"*** of a recipe. Just like you'd want a dish that can be scaled up easily for a large crowd, in programming, you want algorithms that can handle growing amounts of data gracefully. So, Big O is like a heads-up: 
+
+> *"Hey, this recipe might take a bit longer if you add more guests,"* 
+
+{{< /admonition >}}
+
+[`Array.prototype.find()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/find)
 --------------------------------
 
-As we all know, the `find()` method in JavaScript performs a linear search on an array. It returns the first element that satisfies the given condition, and it reads through all the data until it finds that element. Therefore, considering the worst-case scenario, where the item we are searching for is the last element of the array, we say it has a time complexity of O(n). This situation is exemplified in Aditya Bhargava's book "Grokking Algorithms" as follows:
+The `find()` method in JavaScript performs a linear search on an array. It returns the first element that satisfies the given condition, and it reads through all the data until it finds that element. Therefore, considering the worst-case scenario, where the item we are searching for is the last element of the array, we say it has a time complexity of `O(n)`. This situation is exemplified in Aditya Bhargava's book [Grokking Algorithms](https://www.manning.com/books/grokking-algorithms) as follows:
 
-![](./images/187d6bfb52acd189fdcf1dd8c5478470c8b2f5a8.png)
+{{< figure src="images/187d6bfb52acd189fdcf1dd8c5478470c8b2f5a8.png" caption="*Grokking Algorithms `O(n)` Illustration*">}}
 
-Let’s imagine ourselves as new employees in a market, and we’re trying to find the prices of the products customers are buying from the list of products we have. We repeat this process for each product from start to finish. Doesn’t sound like a very practical work experience, does it? Now, envision having a more experienced colleague who knows all the prices by heart and can directly tell you the prices for each product. Sounds great, doesn’t it? In fact, our experienced colleague who knows everything and returns all the prices with a time complexity of O(1), meaning constant time independent of the number of products, is our hash map. So let’s take a closer look at hash maps.
+{{< admonition type=info title="The Library of Hashes" open=true >}}
+You’re in a huge library filled with books, and you’re tasked with finding specific information. Without a system, you’d have to look through each book one by one, which is time-consuming and inefficient, especially if the library keeps getting more books.
 
-What is a hash map and how fast is it?
+Now, imagine you have a magical index that instantly points you to the exact location of the information you need, no matter how many books are in the library. This magical index is like a hash map in programming. It doesn’t matter if you have 10 books or 10,000; the magical index (hash map) helps you find your information quickly every time, which is why we say it has a time complexity of O(1)—it’s always fast, regardless of the size of the library (or data). 📚✨
+{{< /admonition >}}
+
+
+Hash Map :world_map:
 --------------------------------------
 
-A hash map is essentially a storage that can map keys to their corresponding values. When you provide it with a key, it returns the value associated with that key, and you can perform insertion and deletion operations using the same key value in these hash tables. So, it’s a very fast storage system and requires O(1) time complexity for all these operations.
+A hash map is essentially a storage that can map keys to their corresponding values. When you provide it with a key, it returns the value associated with that key, and you can perform insertion and deletion operations using the same key value in these hash tables. So, it’s a very fast storage system and requires `O(1)` time complexity for all these operations.
 
-![](./images/a3da6acf3a75a7add2b91f0b23e18c3b7867f15d.png)
+{{< figure src="images/hash-map.png" caption="Hash Maps Basic Illustration">}}
 
 However, there are some points to be aware of; for example, keys distributed with a poor hash function can collide, making it difficult when we want to perform searches. Or having a hash table with a fill rate of more than about 70% can also lead to performance losses.
 
