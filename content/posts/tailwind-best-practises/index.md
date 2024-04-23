@@ -2,11 +2,11 @@
 title = "How to TailWind CSS like a Pro"
 publishDate = 2024-04-23T00:00:00+05:45
 lastmod = 2024-04-23T11:24:47+05:45
-tags = ["reactjs", "javascript","algorithms"]
-categories = ["algorithms", "frontend"]
+tags = ["tailwind", "reactjs"]
+categories = ["frontend", "UI"]
 draft = false
-featuredImage = "images/maps-vs-array-feature-image.jpg"
-featuredImagePreview = "./posts/js-map-vs-array/images/maps-vs-array-feature-image-preview.jpg"
+featuredImage = "assets/tailwind-wizard.jpg"
+featuredImagePreview = "./posts/tailwind-best-practises/assets/tailwind-surfer.jpg"
 +++
 
 
@@ -83,5 +83,3 @@ This is how the `.btn` class would look like when you hover over it:
 Tailwind supports registering complex styles as well, along with user provided values. You can go through the tailwind official documentation for plugin ([link](https://tailwindcss.com/docs/plugins#overview)) to know more about it.
 
 I have tried to explain the practices with the best example that I know. If you know others, share in the comments for everyone!
-
-> **_Thanks For Reading, Follow Me For More_**
