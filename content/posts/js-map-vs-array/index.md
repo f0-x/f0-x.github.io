@@ -9,7 +9,7 @@ featuredImage = "images/maps-vs-array-feature-image.jpg"
 featuredImagePreview = "./posts/js-map-vs-array/images/maps-vs-array-feature-image-preview.jpg"
 +++
 
-Javascript `Map` is a recently introduced data structure, hence it is not as widely understood as it would first appear, also is not as little as it first appears. We will start off with some fundamentals in this post and gradually head towards explaining the `Map`'s function as well as certain situations in which it may be helpful.
+Javascript `Map` is a rarely used data structure, hence it is not as widely understood as it would first appear, also is not as little as it first appears. We will start off with some fundamentals in this post and gradually head towards explaining the `Map`'s function as well as certain situations in which it may be helpful.
 
 ## The Big :o: Notation
 
@@ -107,8 +107,9 @@ size: 30
 
 This way, instead of using `find`, we can access the value associated with a key in our `Map` data structure using `get` with a time complexity of `O(1)`, independent of the size of the data. Moreover, using the `has` method, we can check for the existence of that data with a time complexity of `O(1)` instead of using `includes` with a time complexity of `O(n)`. Keys are case-sensitive, which provides us with convenience.
 
-{{< oembed "tweet" "https://twitter.com/wesbos/status/1697246046009864504" >}}
-
+{{< style "display:flex; justify-content:center;" >}}
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">JavaScript Maps are super underrated.<br><br>Keys of a map can be anything - including an object!<br><br>Here I&#39;m using the new groupBy proposed API to group array items into a Map or an Object → <a href="https://t.co/RirGlB5akF">pic.twitter.com/RirGlB5akF</a></p>&mdash; Wes Bos (@wesbos) <a href="https://twitter.com/wesbos/status/1697246046009864504?ref_src=twsrc%5Etfw">August 31, 2023</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+{{< /style >}}
 
 ### Methods of the Map data-structure :pushpin:
 
@@ -124,9 +125,39 @@ hashData.values() // iterate values
 hashData.size // returns how many elements it has
 {{</highlight>}}
 
+## Final Thoughts :thought_balloon:
+
+In conclusion, both JavaScript `Maps` and `Arrays` have their own strengths and use cases.
+
+{{< mermaid >}}
+gantt
+    dateFormat  YYYY-MM-DD
+    title When to use Maps OR Arrays ?
+    section Use Arrays When
+    An ordered collection            :done,    des1, 2014-01-06,2014-01-08
+    filtering, mapping, and reduction :active,  des2, 2014-01-09, 3d
+    Access by index               :         des3, after des2, 5d
+    section Use Maps When
+    Key-Value pairs:crit, done, 2014-01-06,24h
+    Keys based fast-lookup         :crit, done, after des1, 2d
+    Complex Data Structures            :crit, active, 3d
+    Non-Numeric keys       :crit, 5d
+{{< /mermaid >}}
+
+
+It's important to note that creating a `Map` in JavaScript can be resource-intensive, so it's only worthwhile if you anticipate using `find()` frequently.
+
+{{< admonition type=tip title="JSON as an alternative" open=true >}}
+Alternatively, you can store keys as properties within a JavaScript `Object` and access values that way. This approach is nearly identical to using a `Map`, but it has the added benefit of being serializable into `JSON`.
+{{< /admonition >}}
+
+
+Lastly, when working with JavaScript for front-end development, it's worth considering whether excessive focus on performance is a wise decision or not. In my POV, script execution speed rarely becomes the bottleneck for web page or app load times. Rather than vigorously replacing every `find()` with a `Map`, consider optimizing your functions & APIs or refining your UI to enhance the overall user experience. Prioritizing milliseconds of speed improvement in JavaScript code may not always yield noticeable benefits.
+
 ## References
 * [Grokking Algorithms](https://www.manning.com/books/grokking-algorithms)
-* [`Map`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map)
+* [Linear Search in JS](https://www.doabledanny.com/linear-search-in-javascript)
+* [ES6 `Map`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map)
 * [Array.prototype.find](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/find)
 * [Array.prototype.filter](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter)
 * [Array.prototype.includes](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/includes)
