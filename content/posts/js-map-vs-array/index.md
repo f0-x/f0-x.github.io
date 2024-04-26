@@ -136,7 +136,7 @@ gantt
     section Use Arrays When
     An ordered collection            :done,    des1, 2014-01-06,2014-01-08
     filtering, mapping, and reduction :active,  des2, 2014-01-09, 3d
-    Access by index               :         des3, after des2, 5d
+    Access by index               :des3, after des2, 5d
     section Use Maps When
     Key-Value pairs:crit, done, 2014-01-06,24h
     Keys based fast-lookup         :crit, done, after des1, 2d
