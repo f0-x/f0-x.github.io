@@ -144,6 +144,15 @@ gantt
     Non-Numeric keys       :crit, 5d
 {{< /mermaid >}}
 
+{{< mermaid >}}
+graph LR;
+    A[Hard edge] -->|Link text| B(Round edge)
+    B --> C{Decision}
+    C -->|One| D[Result one]
+    C -->|Two| E[Result two]
+{{< /mermaid >}}
+
+
 
 It's important to note that creating a `Map` in JavaScript can be resource-intensive, so it's only worthwhile if you anticipate using `find()` frequently.
 
