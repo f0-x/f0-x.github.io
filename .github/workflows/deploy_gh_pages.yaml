@@ -26,9 +26,7 @@ jobs:
           extended: true
 
       - name: Clean Build Hugo Site
-        run: |
-          rm -rf public
-          hugo --gc --minify
+        run: hugo
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
