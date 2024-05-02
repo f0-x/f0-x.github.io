@@ -1,6 +1,24 @@
-<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>Css - Tag - Sushant Rajbanshi</title><link>https://f0-x.github.io/tags/css/</link><description>Css - Tag - Sushant Rajbanshi</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Fri, 05 Apr 2024 00:00:00 +0545</lastBuildDate><atom:link href="https://f0-x.github.io/tags/css/" rel="self" type="application/rss+xml"/><item><title>Intuji UI Components ♾️</title><link>https://f0-x.github.io/posts/ui-components/</link><pubDate>Fri, 05 Apr 2024 00:00:00 +0545</pubDate><guid>https://f0-x.github.io/posts/ui-components/</guid><description><![CDATA[<div class="featured-image">
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>Css - Tag - Sushant Rajbanshi</title>
+        <link>https://f0-x.github.io/tags/css/</link>
+        <description>Css - Tag - Sushant Rajbanshi</description>
+        <generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Fri, 05 Apr 2024 00:00:00 &#43;0545</lastBuildDate><atom:link href="https://f0-x.github.io/tags/css/" rel="self" type="application/rss+xml" /><item>
+    <title>Intuji UI Components ♾️</title>
+    <link>https://f0-x.github.io/posts/ui-components/</link>
+    <pubDate>Fri, 05 Apr 2024 00:00:00 &#43;0545</pubDate><guid>https://f0-x.github.io/posts/ui-components/</guid>
+    <description><![CDATA[<div class="featured-image">
                 <img src="/assets/cover-image.jpg" referrerpolicy="no-referrer">
             </div>The Need for a Robust UI Component Library As our web application grew in complexity, we found ourselves constantly reinventing the wheel when it came to building user interfaces. Our development team was spending too much time creating and maintaining custom UI components, leading to inconsistent styles, duplicated code, and a suboptimal developer experience.
-To address these challenges, we decided to invest in building a comprehensive UI component library that would serve as the foundation for our application&rsquo;s user interface.]]></description></item><item><title>✨Shiny Skeleton Animation using TailwindCSS💨</title><link>https://f0-x.github.io/posts/tailwind-skeleton/</link><pubDate>Sun, 03 Jul 2022 00:00:00 +0545</pubDate><guid>https://f0-x.github.io/posts/tailwind-skeleton/</guid><description><![CDATA[<div class="featured-image">
+To address these challenges, we decided to invest in building a comprehensive UI component library that would serve as the foundation for our application&rsquo;s user interface.]]></description>
+</item>
+<item>
+    <title>✨Shiny Skeleton Animation using TailwindCSS💨</title>
+    <link>https://f0-x.github.io/posts/tailwind-skeleton/</link>
+    <pubDate>Sun, 03 Jul 2022 00:00:00 &#43;0545</pubDate><guid>https://f0-x.github.io/posts/tailwind-skeleton/</guid>
+    <description><![CDATA[<div class="featured-image">
                 <img src="/assets/featured-image.gif" referrerpolicy="no-referrer">
-            </div>Content loaders, skeleton screens, ghost elements, and content placeholders. These are the names given to the effect we&rsquo;ll be exploring today. Many companies, such as LinkedIn, Facebook, YouTube and Slack, use this effect in their apps and websites, as you may have noticed. As much as we developers want our websites to load as quickly as possible, there are times when a lot of data needs to be rendered on the page, so Skeleton screens are a great option.]]></description></item></channel></rss>
+            </div>Content loaders, skeleton screens, ghost elements, and content placeholders. These are the names given to the effect we&rsquo;ll be exploring today. Many companies, such as LinkedIn, Facebook, YouTube and Slack, use this effect in their apps and websites, as you may have noticed. As much as we developers want our websites to load as quickly as possible, there are times when a lot of data needs to be rendered on the page, so Skeleton screens are a great option.]]></description>
+</item>
+</channel>
+</rss>

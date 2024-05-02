@@ -1,21 +1,214 @@
-<!doctype html><html lang=en-us><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=robots content="noodp"><title>Intuji UI Components ♾️ - Sushant Rajbanshi</title><meta name=description content="Welcome to my Code Blog"><meta property="og:url" content="https://f0-x.github.io/posts/ui-components/">
-<meta property="og:site_name" content="Sushant Rajbanshi"><meta property="og:title" content="Intuji UI Components ♾️"><meta property="og:description" content="The Need for a Robust UI Component Library As our web application grew in complexity, we found ourselves constantly reinventing the wheel when it came to building user interfaces. Our development team was spending too much time creating and maintaining custom UI components, leading to inconsistent styles, duplicated code, and a suboptimal developer experience.
-To address these challenges, we decided to invest in building a comprehensive UI component library that would serve as the foundation for our application’s user interface."><meta property="og:locale" content="en-us"><meta property="og:type" content="article"><meta property="article:section" content="posts"><meta property="article:published_time" content="2024-04-05T00:00:00+05:45"><meta property="article:modified_time" content="2024-04-05T16:17:41+05:45"><meta property="article:tag" content="Tailwind"><meta property="article:tag" content="Css"><meta property="article:tag" content="Storybook"><meta property="article:tag" content="React"><meta name=twitter:card content="summary"><meta name=twitter:title content="Intuji UI Components ♾️"><meta name=twitter:description content="The Need for a Robust UI Component Library As our web application grew in complexity, we found ourselves constantly reinventing the wheel when it came to building user interfaces. Our development team was spending too much time creating and maintaining custom UI components, leading to inconsistent styles, duplicated code, and a suboptimal developer experience.
-To address these challenges, we decided to invest in building a comprehensive UI component library that would serve as the foundation for our application&rsquo;s user interface."><meta name=application-name content="🧿"><meta name=apple-mobile-web-app-title content="🧿"><meta name=theme-color content="#ffffff"><meta name=msapplication-TileColor content="#da532c"><link rel="shortcut icon" type=image/x-icon href=/favicon.ico><link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png><link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=mask-icon href=/safari-pinned-tab.svg color=#5bbad5><link rel=manifest href=/site.webmanifest><link rel=canonical href=https://f0-x.github.io/posts/ui-components/><link rel=prev href=https://f0-x.github.io/posts/tailwind-skeleton/><link rel=next href=https://f0-x.github.io/posts/js-map-vs-array/><link rel=stylesheet href=/css/page.min.css><link rel=stylesheet href=/css/home.min.css><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","headline":"Intuji UI Components ♾️","inLanguage":"en-us","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/f0-x.github.io\/posts\/ui-components\/"},"genre":"posts","keywords":"tailwind, css, storybook, react","wordcount":761,"url":"https:\/\/f0-x.github.io\/posts\/ui-components\/","datePublished":"2024-04-05T00:00:00+05:45","dateModified":"2024-04-05T16:17:41+05:45","publisher":{"@type":"Organization","name":"Sushant Rajbanshi"},"author":{"@type":"Person","name":"Sushant Rajbanshi"},"description":""}</script></head><body data-header-desktop data-header-mobile><script>(window.localStorage&&localStorage.getItem("theme")?localStorage.getItem("theme")==="dark":"light"==="auto"?window.matchMedia("(prefers-color-scheme: dark)").matches:"light"==="dark")&&document.body.setAttribute("theme","dark")</script><div id=mask></div><div class=wrapper><header class=desktop id=header-desktop><div class=header-wrapper><div class=header-title><a href=/ title="Sushant Rajbanshi">❛🧿❜</a></div><div class=menu><div class=menu-inner><a class=menu-item href=/posts/>Posts </a><a class=menu-item href=/tags/>Tags </a><a class=menu-item href=/categories/>Categories </a><a class=menu-item href=http://chaudharysushant.com.np rel="noopener noreffer" target=_blank>About Me </a><span class="menu-item delimiter"></span><span class="menu-item search" id=search-desktop>
-<input type=text placeholder="Search titles or contents..." id=search-input-desktop>
-<a href=# class="search-button search-toggle" id=search-toggle-desktop title=Search><i class="fa-solid fa-search fa-fw"></i>
-</a><a href=# class="search-button search-clear" id=search-clear-desktop title=Clear><i class="fa-solid fa-times-circle fa-fw"></i>
-</a><span class="search-button search-loading" id=search-loading-desktop><i class="fa-solid fa-spinner fa-fw fa-spin"></i>
-</span></span><a class=menu-item href=/index.xml title=RSS><i class="fa-solid fa-rss fa-fw" title=RSS></i> </a><a href=# onclick=return!1 class="menu-item theme-switch" title="Switch Theme"><i class="fa-solid fa-adjust fa-fw"></i></a></div></div></div></header><header class=mobile id=header-mobile><div class=header-container><div class=header-wrapper><div class=header-title><a href=/ title="Sushant Rajbanshi">❛🧿❜</a></div><div class=menu-toggle id=menu-toggle-mobile><span></span><span></span><span></span></div></div><div class=menu id=menu-mobile><div class=search-wrapper><div class="search mobile" id=search-mobile><input type=text placeholder="Search titles or contents..." id=search-input-mobile>
-<a href=# class="search-button search-toggle" id=search-toggle-mobile title=Search><i class="fa-solid fa-search fa-fw"></i>
-</a><a href=# class="search-button search-clear" id=search-clear-mobile title=Clear><i class="fa-solid fa-times-circle fa-fw"></i>
-</a><span class="search-button search-loading" id=search-loading-mobile><i class="fa-solid fa-spinner fa-fw fa-spin"></i></span></div><a href=# class=search-cancel id=search-cancel-mobile>Cancel</a></div><a class=menu-item href=/posts/ title>Posts</a><a class=menu-item href=/tags/ title>Tags</a><a class=menu-item href=/categories/ title>Categories</a><a class=menu-item href=http://chaudharysushant.com.np title rel="noopener noreffer" target=_blank>About Me</a><div class=menu-item><a href=/index.xml title=RSS><i class="fa-solid fa-rss fa-fw" title=RSS></i> </a><span>&nbsp;|&nbsp;</span><a href=# onclick=return!1 class=theme-switch title="Switch Theme">
-<i class="fa-solid fa-adjust fa-fw"></i></a></div></div></div></header><div class="search-dropdown desktop"><div id=search-dropdown-desktop></div></div><div class="search-dropdown mobile"><div id=search-dropdown-mobile></div></div><main class=main><div class=container><div class=toc id=toc-auto><h2 class=toc-title>Contents</h2><div class="toc-content always-active" id=toc-content-auto></div></div><article class="page single" data-toc=enable><div class=featured-image><img class=lazyload src=/svg/loading.min.svg data-src=assets/cover-image.jpg data-srcset="/posts/ui-components/assets/cover-image.jpg, assets/cover-image.jpg 1.5x, /posts/ui-components/assets/cover-image.jpg 2x" data-sizes=auto alt=/posts/ui-components/assets/cover-image.jpg title=/posts/ui-components/assets/cover-image.jpg></div><div class=single-card data-image=true><h2 class="single-title animated flipInX">Intuji UI Components ♾️</h2><div class=post-meta><div class=post-meta-line><span class=post-author><a href=/ title=Author rel=author class=author><i class="fa-solid fa-user-circle fa-fw"></i>Sushant Rajbanshi</a></span>&nbsp;<span class=post-category>published in <a href=/categories/ui/><i class="fa-regular fa-folder fa-fw"></i>UI</a>&nbsp;<a href=/categories/ux/><i class="fa-regular fa-folder fa-fw"></i>UX</a></span></div><div class=post-meta-line><span><i class="fa-regular fa-calendar-alt fa-fw"></i>&nbsp;<time datetime=2024-04-05>2024-04-05</time></span>&nbsp;<span><i class="fa-solid fa-pencil-alt fa-fw"></i>&nbsp;761 words</span>&nbsp;
-<span><i class="fa-regular fa-clock fa-fw"></i>&nbsp;4 minutes</span>&nbsp;</div></div><hr><div class="details toc" id=toc-static data-kept><div class="details-summary toc-title"><span>Contents</span>
-<span><i class="details-icon fa-solid fa-angle-right"></i></span></div><div class="details-content toc-content" id=toc-content-static><nav id=TableOfContents><ul><li><a href=#the-need-for-a-robust-ui-component-library>The Need for a Robust UI Component Library</a></li><li><a href=#embracing-tailwind-css-for-consistent-styling>Embracing Tailwind CSS for Consistent Styling</a></li><li><a href=#integrating-typescript-for-enhanced-developer-experience>Integrating TypeScript for Enhanced Developer Experience</a></li><li><a href=#leveraging-storybook-for-isolated-component-development>Leveraging Storybook for Isolated Component Development</a></li><li><a href=#ensuring-reliability-with-vitest>Ensuring Reliability with Vitest</a></li><li><a href=#continuous-improvement-and-expansion>Continuous Improvement and Expansion</a></li></ul></nav></div></div><div class=content id=content><h2 id=the-need-for-a-robust-ui-component-library>The Need for a Robust UI Component Library</h2><p>As our web application grew in complexity, we found ourselves constantly reinventing the wheel when it came to building user interfaces. Our development team was spending too much time creating and maintaining custom UI components, leading to inconsistent styles, duplicated code, and a suboptimal developer experience.</p><figure><img src=/posts/ui-components/assets/reinvent-wheel.png></figure><p>To address these challenges, we decided to invest in building a comprehensive UI component library that would serve as the foundation for our application&rsquo;s user interface. Our goal was to create a modular and scalable system that would not only improve the efficiency of our development process but also ensure a cohesive and visually appealing user experience.</p><h2 id=embracing-tailwind-css-for-consistent-styling>Embracing Tailwind CSS for Consistent Styling</h2><p>After careful consideration, we chose to build our component library using Tailwind CSS, a utility-first CSS framework that has gained immense popularity in the front-end development community. Tailwind CSS provides a vast collection of low-level utility classes that can be easily composed to create complex designs, allowing us to achieve a high degree of customization and consistency across our components.</p><figure><img src=/posts/ui-components/assets/tailwind-css.jpg></figure><p>By leveraging Tailwind CSS, we were able to establish a robust design system that seamlessly integrates with our application&rsquo;s branding and UI guidelines. The utility-first approach of Tailwind CSS empowers our developers to quickly prototype and iterate on component designs, without the need to write extensive custom CSS.</p><h2 id=integrating-typescript-for-enhanced-developer-experience>Integrating TypeScript for Enhanced Developer Experience</h2><p>To ensure type safety and improve the overall developer experience, we decided to implement our component library using TypeScript. By embracing the static typing capabilities of TypeScript, we were able to catch potential errors during development, leading to more reliable and maintainable code.<figure><img src=/posts/ui-components/assets/typescript-better.png></figure>The TypeScript integration also allowed us to provide detailed type definitions for our components, making it easier for other developers to understand and use the library. This, in turn, helped to reduce the learning curve and improved the overall developer productivity within our team.</p><h2 id=leveraging-storybook-for-isolated-component-development>Leveraging Storybook for Isolated Component Development</h2><p>To facilitate the development, documentation, and testing of our UI components, we integrated Storybook into our workflow. Storybook is a powerful tool that enables us to build UI components in isolation, without the interference of the actual application&rsquo;s state or dependencies.</p><figure><img src=/posts/ui-components/assets/storybook-relationship.jpg></figure>By using Storybook, our developers can focus on creating and refining individual components, ensuring that they adhere to the design guidelines and are thoroughly tested. Additionally, Storybook&rsquo;s rich feature set, including the ability to generate interactive documentation and facilitate visual regression testing, has been invaluable in streamlining our component development process.</p><h2 id=ensuring-reliability-with-vitest>Ensuring Reliability with Vitest</h2><p>To maintain the quality and stability of our UI component library, we&rsquo;ve implemented a comprehensive testing suite using Vitest, a modern and lightning-fast testing framework. Vitest allows us to write unit tests for our components, ensuring that they behave as expected and continue to function correctly as the library evolves.</p><figure><img src=/posts/ui-components/assets/vitest-react.png></figure>The integration of Vitest has been instrumental in catching regressions early in the development cycle, reducing the risk of introducing breaking changes and ensuring a reliable user experience for our application&rsquo;s end-users.</p><h2 id=continuous-improvement-and-expansion>Continuous Improvement and Expansion</h2><p>As we continue to build and maintain our UI component library, we&rsquo;re committed to an iterative approach that prioritizes user feedback, emerging front-end trends, and the evolving needs of our application. We&rsquo;ll regularly review the library&rsquo;s design, APIs, and documentation, making adjustments and additions as necessary to keep it up-to-date and aligned with the project&rsquo;s requirements.</p><figure><img src=/posts/ui-components/assets/continuous-improvement.jpeg></figure>By leveraging Tailwind CSS, TypeScript, Storybook, and Vitest, we&rsquo;ve laid a strong foundation for a scalable and maintainable UI component library that will empower our development team to build high-quality user interfaces more efficiently. We&rsquo;re excited to see how this library will continue to evolve and support the growth of our application in the months and years to come.</p><h1 id=final-words>Final Words</h1><p>The Intuji UI component library is an ongoing project, and we&rsquo;re committed to its continuous improvement and expansion. As our application&rsquo;s needs evolve and as we gather feedback from our users, we&rsquo;ll be regularly updating and enhancing the library to ensure it remains a reliable and cutting-edge resource for our development team.</p><p>This blog post itself will also be updated over time to reflect the latest developments, new features, and improvements made to the Intuji component library. Be sure to check back periodically for the most up-to-date information and insights.</p><p>We&rsquo;re excited to see how the Intuji library will continue to grow and support the success of our application. Thank you for your interest, and we look forward to sharing more updates with you in the future.</p><div class="details admonition info open"><div class="details-summary admonition-title"><i class="icon fa-solid fa-info-circle fa-fw"></i>Hyperlinks<i class="details-icon fa-solid fa-angle-right fa-fw"></i></div><div class=details-content><div class=admonition-content><p>Github Repo: <a href=https://github.com/WEBO-Digital/ui-components target=_blank rel="noopener noreffer">Intuji UI Components</a></p><p>Documentation Site: <a href=https://ui-components-mu.vercel.app/ target=_blank rel="noopener noreffer">Intuji UI Components</a></p></div></div></div></div><div class=post-footer id=post-footer><div class=post-info><div class=post-info-tag><span><a href=/tags/tailwind/>Tailwind</a>
-</span><span><a href=/tags/css/>Css</a>
-</span><span><a href=/tags/storybook/>Storybook</a>
-</span><span><a href=/tags/react/>React</a></span></div><div class=post-info-line><div class=post-info-mod><span>Updated on 2024-04-05&nbsp;<a class=git-hash href=https://github.com/f0-x/blog/commit/af7d2de7b61f93c42f2266c47ec80ccadbc23f33 target=_blank title="committed&nbsp;by&nbsp;Sushant Rajbanshi(sushant.rajbanshi@webo.digital)&nbsp;af7d2de:&nbsp;Add new CSS files for home and page">
-<i class="fa-solid fa-hashtag fa-fw"></i>af7d2de</a></span></div><div class=post-info-mod></div></div><div class=post-info-share><span><a href=# onclick=return!1 title="Share on Twitter" data-sharer=twitter data-url=https://f0-x.github.io/posts/ui-components/ data-title="Intuji UI Components ♾️" data-hashtags=tailwind,css,storybook,react><i class="fa-brands fa-square-x-twitter fa-fw"></i></a><a href=# onclick=return!1 title="Share on Facebook" data-sharer=facebook data-url=https://f0-x.github.io/posts/ui-components/ data-hashtag=tailwind><i class="fa-brands fa-facebook-square fa-fw"></i></a><a href=# onclick=return!1 title="Share on Linkedin" data-sharer=linkedin data-url=https://f0-x.github.io/posts/ui-components/><i class="fa-brands fa-linkedin fa-fw"></i></a><a href=# onclick=return!1 title="Share on Reddit" data-sharer=reddit data-url=https://f0-x.github.io/posts/ui-components/><i class="fa-brands fa-reddit fa-fw"></i></a></span></div></div><div class=post-nav><a href=/posts/tailwind-skeleton/ class=prev rel=prev title="✨Shiny Skeleton Animation using TailwindCSS💨"><i class="fa-solid fa-angle-left fa-fw"></i>Previous Post</a>
-<a href=/posts/js-map-vs-array/ class=next rel=next title="ES6 Maps are underrated!">Next Post<i class="fa-solid fa-angle-right fa-fw"></i></a></div></div></div><div id=comments class=single-card><div id=gitalk></div><noscript>Please enable JavaScript to view the comments powered by <a href=https://github.com/gitalk/gitalk></a>Gitalk</a>.</noscript></div></article></div></main><footer class=footer><div class=footer-container><div class=footer-line itemscope itemtype=http://schema.org/CreativeWork><i class="fa-regular fa-copyright fa-fw"></i><span itemprop=copyrightYear>2021 - 2024</span><span class=author itemprop=copyrightHolder>&nbsp;<a href=/>Sushant Rajbanshi</a></span>&nbsp;|&nbsp;<span class=license><a rel="license external nofollow noopener noreffer" href=https://creativecommons.org/licenses/by-nc/4.0/ target=_blank>CC BY-NC 4.0</a></span></div></div></footer></div><div id=fixed-buttons><a href=# id=back-to-top class=fixed-button title="Back to Top"><i class="fa-solid fa-chevron-up fa-fw"></i>
-</a><a href=# id=view-comments class=fixed-button title="View Comments"><i class="fa-solid fa-comment-alt fa-fw"></i></a></div><link rel=stylesheet href=/lib/fontawesome-free/all.min.css><link rel=stylesheet href=/lib/animate/animate.min.css><link rel=stylesheet href=/lib/gitalk/gitalk.min.css><link rel=stylesheet href=/lib/lightgallery/lightgallery.min.css><link rel=stylesheet href=/lib/katex/katex.min.css><link rel=stylesheet href=/lib/katex/copy-tex.min.css><link rel=stylesheet href=/lib/cookieconsent/cookieconsent.min.css><script src="https://polyfill.io/v3/polyfill.min.js?features=Array.prototype.fill%2CArray.prototype.find%2CArray.from%2CIntersectionObserver%2CMath.sign%2CObject.assign%2CPromise%2CObject.entries%2Chtml5shiv%2CObject.values%2Cfetch%2CElement.prototype.after"></script><script src=/lib/object-fit-images/ofi.min.js></script><script src=/lib/gitalk/gitalk.min.js></script><script src=/lib/autocomplete/autocomplete.min.js></script><script src=/lib/lunr/lunr.min.js></script><script src=/lib/lazysizes/lazysizes.min.js></script><script src=/lib/lightgallery/lightgallery.min.js></script><script src=/lib/lightgallery/lg-thumbnail.min.js></script><script src=/lib/lightgallery/lg-zoom.min.js></script><script src=/lib/clipboard/clipboard.min.js></script><script src=/lib/sharer/sharer.min.js></script><script src=/lib/katex/katex.min.js></script><script src=/lib/katex/auto-render.min.js></script><script src=/lib/katex/copy-tex.min.js></script><script src=/lib/katex/mhchem.min.js></script><script src=/lib/cookieconsent/cookieconsent.min.js></script><script>window.config={code:{copyTitle:"Copy to clipboard",maxShownLines:10},comment:{gitalk:{admin:["f0-x"],clientID:"60eb8e8e31fc637ce015",clientSecret:"4a6eaba4e2d62428a8a1c85347e2d5e873a65898",id:"2024-04-05T00:00:00+05:45",owner:"f0-x",repo:"f0-x.github.io",title:"Intuji UI Components ♾️"}},cookieconsent:{content:{dismiss:"Agree",link:"Learn more",message:"Notice. This blog uses cookies to provide necessary website functionality, improve your experience and analyze our traffic. By using our website, you agree to our Privacy Policy and our cookies usage."},enable:!0,palette:{button:{background:"#f0f0f0"},popup:{background:"#1aa3ff"}},theme:"edgeless"},lightGallery:{actualSize:!1,exThumbImage:"data-thumbnail",hideBarsDelay:2e3,selector:".lightgallery",speed:400,thumbContHeight:80,thumbWidth:80,thumbnail:!0},math:{delimiters:[{display:!0,left:"$$",right:"$$"},{display:!0,left:"\\[",right:"\\]"},{display:!1,left:"$",right:"$"},{display:!1,left:"\\(",right:"\\)"}],strict:!1},search:{highlightTag:"em",lunrIndexURL:"/index.json",maxResultLength:10,noResultsFound:"No results found",snippetLength:30,type:"lunr"}}</script><script src=/js/theme.min.js></script></body></html>
+<!DOCTYPE html>
+<html lang="en-us">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <title>Intuji UI Components ♾️ - Sushant Rajbanshi</title><meta name="description" content="Welcome to my Code Blog"><meta property="og:url" content="https://f0-x.github.io/posts/ui-components/">
+  <meta property="og:site_name" content="Sushant Rajbanshi">
+  <meta property="og:title" content="Intuji UI Components ♾️">
+  <meta property="og:description" content="The Need for a Robust UI Component Library As our web application grew in complexity, we found ourselves constantly reinventing the wheel when it came to building user interfaces. Our development team was spending too much time creating and maintaining custom UI components, leading to inconsistent styles, duplicated code, and a suboptimal developer experience.
+To address these challenges, we decided to invest in building a comprehensive UI component library that would serve as the foundation for our application’s user interface.">
+  <meta property="og:locale" content="en-us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2024-04-05T00:00:00+05:45">
+    <meta property="article:modified_time" content="2024-04-05T16:17:41+05:45">
+    <meta property="article:tag" content="Tailwind">
+    <meta property="article:tag" content="Css">
+    <meta property="article:tag" content="Storybook">
+    <meta property="article:tag" content="React">
+<meta name="twitter:card" content="summary"><meta name="twitter:title" content="Intuji UI Components ♾️">
+<meta name="twitter:description" content="The Need for a Robust UI Component Library As our web application grew in complexity, we found ourselves constantly reinventing the wheel when it came to building user interfaces. Our development team was spending too much time creating and maintaining custom UI components, leading to inconsistent styles, duplicated code, and a suboptimal developer experience.
+To address these challenges, we decided to invest in building a comprehensive UI component library that would serve as the foundation for our application&rsquo;s user interface.">
+<meta name="application-name" content="🧿">
+<meta name="apple-mobile-web-app-title" content="🧿"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://f0-x.github.io/posts/ui-components/" /><link rel="prev" href="https://f0-x.github.io/posts/tailwind-skeleton/" /><link rel="next" href="https://f0-x.github.io/posts/js-map-vs-array/" /><link rel="stylesheet" href="/css/page.min.css"><link rel="stylesheet" href="/css/home.min.css"><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Intuji UI Components ♾️",
+        "inLanguage": "en-us",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/f0-x.github.io\/posts\/ui-components\/"
+        },"genre": "posts","keywords": "tailwind, css, storybook, react","wordcount":  761 ,
+        "url": "https:\/\/f0-x.github.io\/posts\/ui-components\/","datePublished": "2024-04-05T00:00:00+05:45","dateModified": "2024-04-05T16:17:41+05:45","publisher": {
+            "@type": "Organization",
+            "name": "Sushant Rajbanshi"},"author": {
+                "@type": "Person",
+                "name": "Sushant Rajbanshi"
+            },"description": ""
+    }
+    </script></head><body data-header-desktop="" data-header-mobile=""><script>(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('light' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'light' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="Sushant Rajbanshi">❛🧿❜</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"> Posts </a><a class="menu-item" href="/tags/"> Tags </a><a class="menu-item" href="/categories/"> Categories </a><a class="menu-item" href="http://chaudharysushant.com.np" rel="noopener noreffer" target="_blank"> About Me </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-desktop">
+                        <a href="#" class="search-button search-toggle" id="search-toggle-desktop" title="Search">
+                            <i class="fa-solid fa-search fa-fw"></i>
+                        </a>
+                        <a href="#" class="search-button search-clear" id="search-clear-desktop" title="Clear">
+                            <i class="fa-solid fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fa-solid fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </span><a class="menu-item" href="/index.xml" title="RSS"><i class="fa-solid fa-rss fa-fw" title="RSS"></i> </a><a href="#" onclick="return false;" class="menu-item theme-switch" title="Switch Theme">
+                    <i class="fa-solid fa-adjust fa-fw"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="Sushant Rajbanshi">❛🧿❜</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-mobile">
+                        <a href="#" class="search-button search-toggle" id="search-toggle-mobile" title="Search">
+                            <i class="fa-solid fa-search fa-fw"></i>
+                        </a>
+                        <a href="#" class="search-button search-clear" id="search-clear-mobile" title="Clear">
+                            <i class="fa-solid fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fa-solid fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </div>
+                    <a href="#" class="search-cancel" id="search-cancel-mobile">
+                        Cancel
+                    </a>
+                </div><a class="menu-item" href="/posts/" title="">Posts</a><a class="menu-item" href="/tags/" title="">Tags</a><a class="menu-item" href="/categories/" title="">Categories</a><a class="menu-item" href="http://chaudharysushant.com.np" title="" rel="noopener noreffer" target="_blank">About Me</a><div class="menu-item"><a href="/index.xml" title="RSS"><i class="fa-solid fa-rss fa-fw" title="RSS"></i> </a>
+                <span>&nbsp;|&nbsp;</span><a href="#" onclick="return false;" class="theme-switch" title="Switch Theme">
+                    <i class="fa-solid fa-adjust fa-fw"></i>
+                </a>
+            </div></div>
+    </div>
+</header><div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+</div>
+<div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+</div><main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">Contents</h2>
+            <div class="toc-content always-active" id="toc-content-auto"></div>
+        </div><article class="page single" data-toc="enable"><div class="featured-image"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="assets/cover-image.jpg"
+        data-srcset="/posts/ui-components/assets/cover-image.jpg, assets/cover-image.jpg 1.5x, /posts/ui-components/assets/cover-image.jpg 2x"
+        data-sizes="auto"
+        alt="/posts/ui-components/assets/cover-image.jpg"
+        title="/posts/ui-components/assets/cover-image.jpg" /></div><div class="single-card" data-image="true"><h2 class="single-title animated flipInX">Intuji UI Components ♾️</h2><div class="post-meta">
+                <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fa-solid fa-user-circle fa-fw"></i>Sushant Rajbanshi</a></span>&nbsp;<span class="post-category">published in <a href="/categories/ui/"><i class="fa-regular fa-folder fa-fw"></i>UI</a>&nbsp;<a href="/categories/ux/"><i class="fa-regular fa-folder fa-fw"></i>UX</a></span></div>
+                <div class="post-meta-line"><span><i class="fa-regular fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2024-04-05">2024-04-05</time></span>&nbsp;<span><i class="fa-solid fa-pencil-alt fa-fw"></i>&nbsp;761 words</span>&nbsp;
+                    <span><i class="fa-regular fa-clock fa-fw"></i>&nbsp;4 minutes</span>&nbsp;</div>
+            </div>
+            
+            <hr><div class="details toc" id="toc-static"  data-kept="">
+                    <div class="details-summary toc-title">
+                        <span>Contents</span>
+                        <span><i class="details-icon fa-solid fa-angle-right"></i></span>
+                    </div>
+                    <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#the-need-for-a-robust-ui-component-library">The Need for a Robust UI Component Library</a></li>
+    <li><a href="#embracing-tailwind-css-for-consistent-styling">Embracing Tailwind CSS for Consistent Styling</a></li>
+    <li><a href="#integrating-typescript-for-enhanced-developer-experience">Integrating TypeScript for Enhanced Developer Experience</a></li>
+    <li><a href="#leveraging-storybook-for-isolated-component-development">Leveraging Storybook for Isolated Component Development</a></li>
+    <li><a href="#ensuring-reliability-with-vitest">Ensuring Reliability with Vitest</a></li>
+    <li><a href="#continuous-improvement-and-expansion">Continuous Improvement and Expansion</a></li>
+  </ul>
+</nav></div>
+                </div><div class="content" id="content"><h2 id="the-need-for-a-robust-ui-component-library">The Need for a Robust UI Component Library</h2>
+<p>As our web application grew in complexity, we found ourselves constantly reinventing the wheel when it came to building user interfaces. Our development team was spending too much time creating and maintaining custom UI components, leading to inconsistent styles, duplicated code, and a suboptimal developer experience.</p>
+<figure><img src="/posts/ui-components/assets/reinvent-wheel.png">
+</figure>
+
+<p>To address these challenges, we decided to invest in building a comprehensive UI component library that would serve as the foundation for our application&rsquo;s user interface. Our goal was to create a modular and scalable system that would not only improve the efficiency of our development process but also ensure a cohesive and visually appealing user experience.</p>
+<h2 id="embracing-tailwind-css-for-consistent-styling">Embracing Tailwind CSS for Consistent Styling</h2>
+<p>After careful consideration, we chose to build our component library using Tailwind CSS, a utility-first CSS framework that has gained immense popularity in the front-end development community. Tailwind CSS provides a vast collection of low-level utility classes that can be easily composed to create complex designs, allowing us to achieve a high degree of customization and consistency across our components.</p>
+<figure><img src="/posts/ui-components/assets/tailwind-css.jpg">
+</figure>
+
+<p>By leveraging Tailwind CSS, we were able to establish a robust design system that seamlessly integrates with our application&rsquo;s branding and UI guidelines. The utility-first approach of Tailwind CSS empowers our developers to quickly prototype and iterate on component designs, without the need to write extensive custom CSS.</p>
+<h2 id="integrating-typescript-for-enhanced-developer-experience">Integrating TypeScript for Enhanced Developer Experience</h2>
+<p>To ensure type safety and improve the overall developer experience, we decided to implement our component library using TypeScript. By embracing the static typing capabilities of TypeScript, we were able to catch potential errors during development, leading to more reliable and maintainable code.
+<figure><img src="/posts/ui-components/assets/typescript-better.png">
+</figure>
+
+The TypeScript integration also allowed us to provide detailed type definitions for our components, making it easier for other developers to understand and use the library. This, in turn, helped to reduce the learning curve and improved the overall developer productivity within our team.</p>
+<h2 id="leveraging-storybook-for-isolated-component-development">Leveraging Storybook for Isolated Component Development</h2>
+<p>To facilitate the development, documentation, and testing of our UI components, we integrated Storybook into our workflow. Storybook is a powerful tool that enables us to build UI components in isolation, without the interference of the actual application&rsquo;s state or dependencies.</p>
+<figure><img src="/posts/ui-components/assets/storybook-relationship.jpg">
+</figure>
+
+By using Storybook, our developers can focus on creating and refining individual components, ensuring that they adhere to the design guidelines and are thoroughly tested. Additionally, Storybook&rsquo;s rich feature set, including the ability to generate interactive documentation and facilitate visual regression testing, has been invaluable in streamlining our component development process.</p>
+<h2 id="ensuring-reliability-with-vitest">Ensuring Reliability with Vitest</h2>
+<p>To maintain the quality and stability of our UI component library, we&rsquo;ve implemented a comprehensive testing suite using Vitest, a modern and lightning-fast testing framework. Vitest allows us to write unit tests for our components, ensuring that they behave as expected and continue to function correctly as the library evolves.</p>
+<figure><img src="/posts/ui-components/assets/vitest-react.png">
+</figure>
+
+The integration of Vitest has been instrumental in catching regressions early in the development cycle, reducing the risk of introducing breaking changes and ensuring a reliable user experience for our application&rsquo;s end-users.</p>
+<h2 id="continuous-improvement-and-expansion">Continuous Improvement and Expansion</h2>
+<p>As we continue to build and maintain our UI component library, we&rsquo;re committed to an iterative approach that prioritizes user feedback, emerging front-end trends, and the evolving needs of our application. We&rsquo;ll regularly review the library&rsquo;s design, APIs, and documentation, making adjustments and additions as necessary to keep it up-to-date and aligned with the project&rsquo;s requirements.</p>
+<figure><img src="/posts/ui-components/assets/continuous-improvement.jpeg">
+</figure>
+
+By leveraging Tailwind CSS, TypeScript, Storybook, and Vitest, we&rsquo;ve laid a strong foundation for a scalable and maintainable UI component library that will empower our development team to build high-quality user interfaces more efficiently. We&rsquo;re excited to see how this library will continue to evolve and support the growth of our application in the months and years to come.</p>
+<h1 id="final-words">Final Words</h1>
+<p>The Intuji UI component library is an ongoing project, and we&rsquo;re committed to its continuous improvement and expansion. As our application&rsquo;s needs evolve and as we gather feedback from our users, we&rsquo;ll be regularly updating and enhancing the library to ensure it remains a reliable and cutting-edge resource for our development team.</p>
+<p>This blog post itself will also be updated over time to reflect the latest developments, new features, and improvements made to the Intuji component library. Be sure to check back periodically for the most up-to-date information and insights.</p>
+<p>We&rsquo;re excited to see how the Intuji library will continue to grow and support the success of our application. Thank you for your interest, and we look forward to sharing more updates with you in the future.</p>
+<div class="details admonition info open">
+        <div class="details-summary admonition-title">
+            <i class="icon fa-solid fa-info-circle fa-fw"></i>Hyperlinks<i class="details-icon fa-solid fa-angle-right fa-fw"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content"><p>Github Repo: <a href="https://github.com/WEBO-Digital/ui-components" target="_blank" rel="noopener noreffer">Intuji UI Components</a></p>
+<p>Documentation Site: <a href="https://ui-components-mu.vercel.app/" target="_blank" rel="noopener noreffer">Intuji UI Components</a></p>
+</div>
+        </div>
+    </div>
+</div><div class="post-footer" id="post-footer">
+    <div class="post-info"><div class="post-info-tag"><span><a href="/tags/tailwind/">Tailwind</a>
+                </span><span><a href="/tags/css/">Css</a>
+                </span><span><a href="/tags/storybook/">Storybook</a>
+                </span><span><a href="/tags/react/">React</a>
+                </span></div><div class="post-info-line"><div class="post-info-mod">
+                <span>Updated on 2024-04-05&nbsp;<a class="git-hash" href="https://github.com/f0-x/blog/commit/af7d2de7b61f93c42f2266c47ec80ccadbc23f33" target="_blank" title="committed&nbsp;by&nbsp;Sushant Rajbanshi(sushant.rajbanshi@webo.digital)&nbsp;af7d2de:&nbsp;Add new CSS files for home and page">
+                            <i class="fa-solid fa-hashtag fa-fw"></i>af7d2de</a></span>
+            </div><div class="post-info-mod"></div>
+        </div><div class="post-info-share">
+            <span><a href="#" onclick="return false;" title="Share on Twitter" data-sharer="twitter" data-url="https://f0-x.github.io/posts/ui-components/" data-title="Intuji UI Components ♾️" data-hashtags="tailwind,css,storybook,react"><i class="fa-brands fa-square-x-twitter fa-fw"></i></a><a href="#" onclick="return false;" title="Share on Facebook" data-sharer="facebook" data-url="https://f0-x.github.io/posts/ui-components/" data-hashtag="tailwind"><i class="fa-brands fa-facebook-square fa-fw"></i></a><a href="#" onclick="return false;" title="Share on Linkedin" data-sharer="linkedin" data-url="https://f0-x.github.io/posts/ui-components/"><i class="fa-brands fa-linkedin fa-fw"></i></a><a href="#" onclick="return false;" title="Share on Reddit" data-sharer="reddit" data-url="https://f0-x.github.io/posts/ui-components/"><i class="fa-brands fa-reddit fa-fw"></i></a></span>
+        </div></div><div class="post-nav"><a href="/posts/tailwind-skeleton/" class="prev" rel="prev" title="✨Shiny Skeleton Animation using TailwindCSS💨"><i class="fa-solid fa-angle-left fa-fw"></i>Previous Post</a>
+            <a href="/posts/js-map-vs-array/" class="next" rel="next" title="ES6 Maps are underrated!">Next Post<i class="fa-solid fa-angle-right fa-fw"></i></a></div></div>
+</div><div id="comments" class="single-card"><div id="gitalk"></div><noscript>
+                Please enable JavaScript to view the comments powered by <a href="https://github.com/gitalk/gitalk"></a>Gitalk</a>.
+            </noscript></div></article></div>
+            </main>
+            <footer class="footer"><div class="footer-container"><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="fa-regular fa-copyright fa-fw"></i><span itemprop="copyrightYear">2021 - 2024</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/">Sushant Rajbanshi</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+</div>
+</footer>
+        </div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Back to Top">
+                <i class="fa-solid fa-chevron-up fa-fw"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
+                <i class="fa-solid fa-comment-alt fa-fw"></i>
+            </a></div><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="/lib/animate/animate.min.css"><link rel="stylesheet" href="/lib/gitalk/gitalk.min.css"><link rel="stylesheet" href="/lib/lightgallery/lightgallery.min.css"><link rel="stylesheet" href="/lib/katex/katex.min.css"><link rel="stylesheet" href="/lib/katex/copy-tex.min.css"><link rel="stylesheet" href="/lib/cookieconsent/cookieconsent.min.css"><script src="https://polyfill.io/v3/polyfill.min.js?features=Array.prototype.fill%2CArray.prototype.find%2CArray.from%2CIntersectionObserver%2CMath.sign%2CObject.assign%2CPromise%2CObject.entries%2Chtml5shiv%2CObject.values%2Cfetch%2CElement.prototype.after"></script><script src="/lib/object-fit-images/ofi.min.js"></script><script src="/lib/gitalk/gitalk.min.js"></script><script src="/lib/autocomplete/autocomplete.min.js"></script><script src="/lib/lunr/lunr.min.js"></script><script src="/lib/lazysizes/lazysizes.min.js"></script><script src="/lib/lightgallery/lightgallery.min.js"></script><script src="/lib/lightgallery/lg-thumbnail.min.js"></script><script src="/lib/lightgallery/lg-zoom.min.js"></script><script src="/lib/clipboard/clipboard.min.js"></script><script src="/lib/sharer/sharer.min.js"></script><script src="/lib/katex/katex.min.js"></script><script src="/lib/katex/auto-render.min.js"></script><script src="/lib/katex/copy-tex.min.js"></script><script src="/lib/katex/mhchem.min.js"></script><script src="/lib/cookieconsent/cookieconsent.min.js"></script><script>window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":10},"comment":{"gitalk":{"admin":["f0-x"],"clientID":"60eb8e8e31fc637ce015","clientSecret":"4a6eaba4e2d62428a8a1c85347e2d5e873a65898","id":"2024-04-05T00:00:00+05:45","owner":"f0-x","repo":"f0-x.github.io","title":"Intuji UI Components ♾️"}},"cookieconsent":{"content":{"dismiss":"Agree","link":"Learn more","message":"Notice. This blog uses cookies to provide necessary website functionality, improve your experience and analyze our traffic. By using our website, you agree to our Privacy Policy and our cookies usage."},"enable":true,"palette":{"button":{"background":"#f0f0f0"},"popup":{"background":"#1aa3ff"}},"theme":"edgeless"},"lightGallery":{"actualSize":false,"exThumbImage":"data-thumbnail","hideBarsDelay":2000,"selector":".lightgallery","speed":400,"thumbContHeight":80,"thumbWidth":80,"thumbnail":true},"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"highlightTag":"em","lunrIndexURL":"/index.json","maxResultLength":10,"noResultsFound":"No results found","snippetLength":30,"type":"lunr"}};</script><script src="/js/theme.min.js"></script></body></html>
