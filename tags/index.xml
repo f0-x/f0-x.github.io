@@ -3,7 +3,19 @@
         <title>Tags - Tag - Sushant Rajbanshi</title>
         <link>https://f0-x.github.io/tags/</link>
         <description>Tags - Tag - Sushant Rajbanshi</description>
-        <generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Sun, 21 Apr 2024 00:00:00 &#43;0545</lastBuildDate><atom:link href="https://f0-x.github.io/tags/" rel="self" type="application/rss+xml" /><item>
+        <generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Tue, 23 Apr 2024 00:00:00 &#43;0545</lastBuildDate><atom:link href="https://f0-x.github.io/tags/" rel="self" type="application/rss+xml" /><item>
+    <title>Reactjs</title>
+    <link>https://f0-x.github.io/tags/reactjs/</link>
+    <pubDate>Tue, 23 Apr 2024 00:00:00 &#43;0545</pubDate><guid>https://f0-x.github.io/tags/reactjs/</guid>
+    <description><![CDATA[]]></description>
+</item>
+<item>
+    <title>Tailwind</title>
+    <link>https://f0-x.github.io/tags/tailwind/</link>
+    <pubDate>Tue, 23 Apr 2024 00:00:00 &#43;0545</pubDate><guid>https://f0-x.github.io/tags/tailwind/</guid>
+    <description><![CDATA[]]></description>
+</item>
+<item>
     <title>Algorithms</title>
     <link>https://f0-x.github.io/tags/algorithms/</link>
     <pubDate>Sun, 21 Apr 2024 00:00:00 &#43;0545</pubDate><guid>https://f0-x.github.io/tags/algorithms/</guid>
@@ -13,12 +25,6 @@
     <title>Javascript</title>
     <link>https://f0-x.github.io/tags/javascript/</link>
     <pubDate>Sun, 21 Apr 2024 00:00:00 &#43;0545</pubDate><guid>https://f0-x.github.io/tags/javascript/</guid>
-    <description><![CDATA[]]></description>
-</item>
-<item>
-    <title>Reactjs</title>
-    <link>https://f0-x.github.io/tags/reactjs/</link>
-    <pubDate>Sun, 21 Apr 2024 00:00:00 &#43;0545</pubDate><guid>https://f0-x.github.io/tags/reactjs/</guid>
     <description><![CDATA[]]></description>
 </item>
 <item>
@@ -37,12 +43,6 @@
     <title>Storybook</title>
     <link>https://f0-x.github.io/tags/storybook/</link>
     <pubDate>Fri, 05 Apr 2024 00:00:00 &#43;0545</pubDate><guid>https://f0-x.github.io/tags/storybook/</guid>
-    <description><![CDATA[]]></description>
-</item>
-<item>
-    <title>Tailwind</title>
-    <link>https://f0-x.github.io/tags/tailwind/</link>
-    <pubDate>Fri, 05 Apr 2024 00:00:00 &#43;0545</pubDate><guid>https://f0-x.github.io/tags/tailwind/</guid>
     <description><![CDATA[]]></description>
 </item>
 </channel>
