@@ -12,14 +12,5 @@
             </div>In this article, I’ll share some best practices for working with Tailwind CSS, which I usually prefer to follow and have learnt over a period of time. By following these tips, you can keep your application clean, organized, and maintainable, even as your project grows.
 1. Utilize Design Tokens 🪙 Design tokens are like special containers that hold all the important things that make your designs look good, like colors, sizes, fonts, and where things break on a screen.]]></description>
 </item>
-<item>
-    <title>ES6 Maps are underrated!</title>
-    <link>https://f0-x.github.io/posts/js-map-vs-array/</link>
-    <pubDate>Sun, 21 Apr 2024 00:00:00 &#43;0545</pubDate><guid>https://f0-x.github.io/posts/js-map-vs-array/</guid>
-    <description><![CDATA[<div class="featured-image">
-                <img src="/images/maps-vs-array-feature-image.jpg" referrerpolicy="no-referrer">
-            </div>Javascript Map is a rarely used data structure, hence it is not as widely understood as it would first appear, also is not as little as it first appears. We will start off with some fundamentals in this post and gradually head towards explaining the Map&rsquo;s function as well as certain situations in which it may be helpful.
-The Big &#x2b55; Notation Understanding Big O Notation is crucial for analyzing the efficiency and scalability of algorithms and data structures.]]></description>
-</item>
 </channel>
 </rss>
