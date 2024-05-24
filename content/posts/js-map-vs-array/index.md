@@ -1,10 +1,10 @@
 +++
 title = "ES6 Maps are underrated!"
-publishDate = 2024-04-21T00:00:00+05:45
-lastmod = 2024-04-22T11:24:47+05:45
+publishDate = 2024-05-22T00:00:00+05:45
+lastmod = 2024-05-24T11:24:47+05:45
 tags = ["reactjs", "javascript","algorithms"]
 categories = ["algorithms", "frontend"]
-draft = true
+draft = false
 featuredImage = "images/maps-vs-array-feature-image.jpg"
 featuredImagePreview = "./posts/js-map-vs-array/images/maps-vs-array-feature-image-preview.jpg"
 +++
