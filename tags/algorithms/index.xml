@@ -1,0 +1,16 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>Algorithms - Tag - Sushant Rajbanshi</title>
+        <link>https://f0-x.github.io/tags/algorithms/</link>
+        <description>Algorithms - Tag - Sushant Rajbanshi</description>
+        <generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Wed, 22 May 2024 00:00:00 &#43;0545</lastBuildDate><atom:link href="https://f0-x.github.io/tags/algorithms/" rel="self" type="application/rss+xml" /><item>
+    <title>ES6 Maps are underrated!</title>
+    <link>https://f0-x.github.io/posts/js-map-vs-array/</link>
+    <pubDate>Wed, 22 May 2024 00:00:00 &#43;0545</pubDate><guid>https://f0-x.github.io/posts/js-map-vs-array/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="/images/maps-vs-array-feature-image.jpg" referrerpolicy="no-referrer">
+            </div>Javascript Map is a rarely used data structure, hence it is not as widely understood as it would first appear, also is not as little as it first appears. We will start off with some fundamentals in this post and gradually head towards explaining the Map&rsquo;s function as well as certain situations in which it may be helpful.
+The Big &#x2b55; Notation Understanding Big O Notation is crucial for analyzing the efficiency and scalability of algorithms and data structures.]]></description>
+</item>
+</channel>
+</rss>
