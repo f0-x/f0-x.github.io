@@ -19,18 +19,6 @@ jobs:
           submodules: true # Fetch Hugo themes (true OR recursive)
           fetch-depth: 0 # Fetch all history for .GitInfo and .Lastmod
 
-      - name: Add CNAME record
-        run: |
-          echo "sushant.is-cool.dev" > public/CNAME
-
-      - name: Commit changes
-        uses: EndBug/add-and-commit@v9
-        with:
-          author_name: GitHub Actions
-          author_email: actions@github.com
-          message: "Update CNAME record"
-          add: "public/CNAME"
-
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@v2
         with:
@@ -47,4 +35,16 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./public
 
+      - name: Add CNAME record
+        if: github.ref == 'refs/heads/main'
+        run: |
+          echo "sushant.is-cool.dev" > ./public/CNAME
 
+      - name: Commit CNAME changes
+        if: github.ref == 'refs/heads/main'
+        uses: EndBug/add-and-commit@v9
+        with:
+          author_name: GitHub Actions
+          author_email: actions@github.com
+          message: "Update CNAME record"
+          add: "public/CNAME"
