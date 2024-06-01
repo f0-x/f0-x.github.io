@@ -35,7 +35,7 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./public
 
-     - name: Add CNAME record
+      - name: Add CNAME record
         run: |
           git checkout gh-pages
           echo "sushant.is-cool.dev" > ./public/CNAME
