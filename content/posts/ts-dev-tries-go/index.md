@@ -12,7 +12,7 @@ featuredImagePreview = "./posts/ts-dev-tries-go/images/trying-golang.jpeg"
 
 As someone who has been involved in software development for over 3 years, I have primarily worked with JavaScript -*and nowadays Typescript mostly*- although I have also used languages like Python for specific projects. In this article, I want to share my initial impressions of the Go programming language as a web developer. I don't intend for this to be a negative critique of JavaScript, as there are already plenty of those. Instead, I will highlight a few aspects of Go that I find particularly interesting and cool.
 
-Explicit error handling
+Explicit error handling 💉
 --------------------
 
 In JavaScript development, it is often the case that we return errors as regular JavaScript objects instead of throwing instances of the built-in `Error` class. The act of throwing should only be used when intentionally crashing the program. This is because JavaScript is [single-threaded and synchronous](https://groovetechnology.com/blog/why-javascript-is-single-threaded/), so throwing an error will stop the execution of the program. This can be problematic in some cases, especially when working with asynchronous code. Additionally, JavaScript has a built-in `try...catch` statement that can be used to catch errors and handle them gracefully.
