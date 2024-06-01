@@ -38,7 +38,7 @@ jobs:
       - name: Add CNAME record
         run: |
           git checkout gh-pages
-          echo "sushant.is-cool.dev" > ./public/CNAME
+          echo "sushant.is-cool.dev" > ./CNAME
 
       - name: Commit CNAME changes
         uses: EndBug/add-and-commit@v9
@@ -46,5 +46,5 @@ jobs:
           author_name: GitHub Actions
           author_email: actions@github.com
           message: "Update CNAME record"
-          add: "public/CNAME"
+          add: "CNAME"
           branch: gh-pages # Commit to the gh-pages branch
