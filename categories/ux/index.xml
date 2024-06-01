@@ -10,7 +10,7 @@
     <description><![CDATA[<div class="featured-image">
                 <img src="/assets/cover-image.jpg" referrerpolicy="no-referrer">
             </div>The Need for a Robust UI Component Library As our web application grew in complexity, we found ourselves constantly reinventing the wheel when it came to building user interfaces. Our development team was spending too much time creating and maintaining custom UI components, leading to inconsistent styles, duplicated code, and a suboptimal developer experience.
-To address these challenges, we decided to invest in building a comprehensive UI component library that would serve as the foundation for our application&rsquo;s user interface.]]></description>
+ To address these challenges, we decided to invest in building a comprehensive UI component library that would serve as the foundation for our application&rsquo;s user interface.]]></description>
 </item>
 <item>
     <title>✨Shiny Skeleton Animation using TailwindCSS💨</title>
