@@ -34,3 +34,15 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./public
+
+      - name: Add CNAME record
+        run: |
+          echo "sushant.is-cool.dev" > public/CNAME
+
+      - name: Commit changes
+        uses: EndBug/add-and-commit@v9
+        with:
+          author_name: GitHub Actions
+          author_email: actions@github.com
+          message: "Update CNAME record"
+          add: "public/CNAME"
