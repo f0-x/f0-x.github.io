@@ -38,6 +38,7 @@ jobs:
       - name: Add CNAME record
         run: |
           git checkout gh-pages
+          git pull
           echo "sushant.is-cool.dev" > ./CNAME
 
       - name: Commit CNAME changes
