@@ -349,6 +349,7 @@ enableEmoji = true
     guessSyntax = true
     lineNos = true
     lineNumbersInTable = true
+    style = "dracula"
     # false is a necessary configuration
     # (https://github.com/khusika/FeelIt/issues/158)
     noClasses = false

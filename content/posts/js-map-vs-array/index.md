@@ -108,7 +108,7 @@ size: 30
 This way, instead of using `find`, we can access the value associated with a key in our `Map` data structure using `get` with a time complexity of `O(1)`, independent of the size of the data. Moreover, using the `has` method, we can check for the existence of that data with a time complexity of `O(1)` instead of using `includes` with a time complexity of `O(n)`. Keys are case-sensitive, which provides us with convenience.
 
 {{< style "display:flex; justify-content:center;" >}}
-<blockquote class="twitter-tweet"><p lang="en" dir="ltr">JavaScript Maps are super underrated.<br><br>Keys of a map can be anything - including an object!<br><br>Here I&#39;m using the new groupBy proposed API to group array items into a Map or an Object → <a href="https://t.co/RirGlB5akF">pic.twitter.com/RirGlB5akF</a></p>&mdash; Wes Bos (@wesbos) <a href="https://twitter.com/wesbos/status/1697246046009864504?ref_src=twsrc%5Etfw">August 31, 2023</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+{{< twitter user="wesbos" id="1697246046009864504" >}}
 {{< /style >}}
 
 ### Methods of the Map data-structure :pushpin:
