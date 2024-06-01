@@ -1,12 +1,12 @@
 +++
 title = "Trying GoLang for the first time"
-publishDate = 2024-05-01T00:00:00+01:15
-lastmod = 2024-05-03T11:24:47+05:45
+publishDate = 2024-06-01T00:00:00+01:15
+lastmod = 2024-06-03T11:24:47+05:45
 tags = ["golang", "typescript"]
 categories = ["languages", "programming"]
-draft = true
-featuredImage = "images/maps-vs-array-feature-image.jpg"
-featuredImagePreview = "./posts/js-map-vs-array/images/maps-vs-array-feature-image-preview.jpg"
+draft = false
+featuredImage = "images/golang-exciting.jpeg"
+featuredImagePreview = "./posts/ts-dev-tries-go/images/trying-golang.jpeg"
 +++
 
 
