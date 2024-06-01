@@ -46,5 +46,5 @@ jobs:
           author_name: GitHub Actions
           author_email: actions@github.com
           message: "Update CNAME record"
-          add: "CNAME"
+          add: "./CNAME"
           branch: gh-pages # Commit to the gh-pages branch
