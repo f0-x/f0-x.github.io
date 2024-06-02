@@ -4,7 +4,7 @@ publishDate = 2024-06-01T00:00:00+01:15
 lastmod = 2024-06-03T11:24:47+05:45
 tags = ["golang", "typescript"]
 categories = ["languages", "programming"]
-draft = true
+draft = false
 featuredImage = "images/golang-exciting.jpeg"
 featuredImagePreview = "./posts/ts-dev-tries-go/images/trying-golang.jpeg"
 +++
@@ -12,7 +12,49 @@ featuredImagePreview = "./posts/ts-dev-tries-go/images/trying-golang.jpeg"
 
 As someone who has been involved in software development for over 3 years, I have primarily worked with JavaScript -*and nowadays Typescript mostly*- although I have also used languages like Python for specific projects. In this article, I want to share my initial impressions of the Go programming language as a web developer. I don't intend for this to be a negative critique of JavaScript, as there are already plenty of those. Instead, I will highlight a few aspects of Go that I find particularly interesting and cool.
 
-Explicit error handling 💉
+Simple type system 🎹
+------------------
+
+I really love TypeScript. It has completely changed the way I write Frontend by reducing the need for excessive console logging. However, there are times when I find the type system to be quite complex. Especially when I'm working on large projects, I often have to deal with convoluted type manipulations. And to make matters worse, the error messages can be really confusing and not very helpful. It can be quite frustrating trying to understand what went wrong.
+
+{{< figure src="images/really-long-ts-error.png" caption="*Very long Typescript Error* 😭" >}}
+
+Go's type system is simple and straightforward. It includes common primitives like int and string, as well as arrays, slices, structs, interfaces, and functions. Generics were also [introduced later on](https://go.dev/blog/intro-generics). The compiler is highly efficient and provides concise and helpful error messages in most cases.
+
+A single way to do things
+-------------------------
+
+While it may initially seem limiting, the fact that Go provides only one approach for each task makes it a straightforward language to work with. This simplicity is especially beneficial for large teams working on extensive codebases. Whether a junior or senior developer, they would produce the same code when solving the same problem.
+
+In Go, there is only one way to create a loop:
+
+{{<highlight go>}}
+sum := 0
+for i := 0; i < 10; i++ {
+    sum += i
+}
+    fmt.Println(sum)
+{{</highlight>}}
+The `init` and `post` statements are not required in Go. By removing the semicolons, the `for` loop can be transformed into a `while` loop:
+
+{{<highlight go>}}
+sum := 1
+for sum < 1000 {
+    sum += sum
+}
+    fmt.Println(sum)
+    {{</highlight>}}
+
+
+If you omit the loop condition, you get an inifinite loop:
+
+    {{<highlight go>}}
+    for {
+    	// runs forever
+    }
+    {{</highlight>}}
+
+Explicit error handling
 --------------------
 
 In JavaScript development, it is often the case that we return errors as regular JavaScript objects instead of throwing instances of the built-in `Error` class. The act of throwing should only be used when intentionally crashing the program. This is because JavaScript is [single-threaded and synchronous](https://groovetechnology.com/blog/why-javascript-is-single-threaded/), so throwing an error will stop the execution of the program. This can be problematic in some cases, especially when working with asynchronous code. Additionally, JavaScript has a built-in `try...catch` statement that can be used to catch errors and handle them gracefully.
@@ -29,8 +71,7 @@ In Go, [error handling](https://go.dev/blog/error-handling-and-go) is built-in a
 
 The `defer` statment: A simple way to handle cleanup tasks
 -----
-
-The defer statement in Go allows you to postpone the execution of a function until the surrounding function finishes. Let's take a look at an example where I open a file to copy its contents to another file:
+For those of you familiar to React's useEffect's cleanup function, the `defer` statement in Go is similar. The defer statement in Go allows you to postpone the execution of a function until the surrounding function finishes. Let's take a look at an example where I open a file to copy its contents to another file:
 
 {{<highlight go "hl_inline=true, hl_Lines=6-9">}}
     func CopyFile(dstName, srcName string) (written int64, err error) {
@@ -85,11 +126,12 @@ One of the main subjects of memes in JavaScript is its ridiculous type coercion.
 **In Go**, explicit type conversion is required when assigning values between different types. Attempting to assign a `string` to an `int` or perform operations between mismatched types will result in a compilation error. Although this may add some complexity to writing Go code, it greatly enhances code readability and maintainability, which is a common characteristic of the language.
 
 
-No break statement needed at the end of every switch case
+Give `break` a break:
 ---------------------------------------------------------
 
-Here’s a JavaScript switch statement from MDN:
+Here’s a JavaScript switch statement from [MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/switch#try_it):
 
+{{<highlight javascript>}}
     const expr = 'Papayas';
     switch (expr) {
       case 'Oranges':
@@ -102,9 +144,10 @@ Here’s a JavaScript switch statement from MDN:
       default:
         console.log(`Sorry, we are out of ${expr}.`);
     }
+{{</highlight>}}
 
-Here is the same switch written in Go:
-
+Now in Go:
+{{<highlight go>}}
     expr := "Papayas"
     switch expr {
     case "Oranges":
@@ -114,17 +157,20 @@ Here is the same switch written in Go:
     default:
     	fmt.Printf("Sorry, we are out of %s.", expr)
     }
+{{</highlight>}}
 
-Go’s switch is like the one in C, Java, JavaScript, and PHP, except that Go only runs the selected case, not all the cases that follow. In effect, the break statement that is needed at the end of each case in those languages is provided automatically in Go.
+In Go, the switch statement works differently compared to C, Java, JavaScript, and PHP. In Go, only the selected case is executed, unlike other languages where all subsequent cases are also executed. This eliminates the need for a break statement at the end of each case, as required in those languages, as Go handles it automatically.
 
-Pointers
+Pointers ↗↘↙↖
 --------
 
-In Go, function arguments are all passed by value or copied by default. This includes things like arrays and structs. You can explicitly define a function that takes a pointer as an argument. A pointer holds the memory address of a value. Here’s a snippet from the official Go tutorial:
+In Go, function arguments are passed by value, which means they are copied by default. This rule also applies to arrays and structs. However, you have the option to explicitly define a function that takes a pointer as an argument. Pointers store the memory address of a value. Here's an example taken from the [official Go tutorial](https://go.dev/tour/moretypes/1):
 
+{{<highlight go>}}
+    package main
+    import "fmt"
     func main() {
     	i, j := 42, 2701
-
     	p := &i         // point to i
     	fmt.Println(*p) // read i through the pointer
     	*p = 21         // set i through the pointer
@@ -134,46 +180,16 @@ In Go, function arguments are all passed by value or copied by default. This inc
     	*p = *p / 37   // divide j through the pointer
     	fmt.Println(j) // see the new value of j
     }
+{{</highlight>}}
 
 Again, this makes Golang so easy to read and maintain.
 
-Basic type system
-------------------
 
-Don’t get me wrong, I love TypeScript. I can’t imagine myself going back to the dark times of having to `console.log` everything just to get to know what I’m working with. But the type system might be a little too rich for my taste. I often run into situations where I have to do a lot of type gymnastics when I’m using it. This is especially true when building libraries. A complex type system also leads to very complicated, sometimes unhelpful error messages: ![very long typescript error](./images/01747e12b4640534bec61e20c1a63cd2f033be2c.png)
 
-In contrast, Go possesses a straightforward type system. You have the usual primitives like int, string, … etc. You have arrays, slices, and structs. You have interfaces and functions. Generics were later added to the language. That’s it. The compiler is very fast and will display very concise/helpful error messages most of the time.
-
-Only one way to do things
--------------------------
-
-While it may sound restrictive at first, the fact that Go offers only one approach to each task makes it a simple language to work with. Especially for big teams working on big codebases. A junior developer should produce the same code a senior would produce working on the same problem. A simple example for that is loops in Go.
-
-Go has only one looping construct, the `for` loop.
-
-    sum := 0
-    for i := 0; i < 10; i++ {
-    	sum += i
-    }
-    fmt.Println(sum)
-
-The init and post statements are optional. You can drop the semicolons making `for` a while loop in Go:
-
-    sum := 1
-    for sum < 1000 {
-    	sum += sum
-    }
-    fmt.Println(sum)
-
-If you omit the loop condition it loops forever, so an infinite loop is compactly expressed.
-
-    for {
-    	// runs forever
-    }
-
-Still ways to go
+Still a Long Way to Go
 ----------------
 
-I just started learning Go. The only way I can describe it is that **Go is Simple**. So incredibly simple. When you read a program written in Go you almost always know what it does. The icing on that cake is that Go’s performance is so good. It’s sometimes hard to believe that Go is a garbage-collected programming language. It’s been used to build performance critical software such as the [cockroach database](https://github.com/cockroachdb/cockroach) and many others.
+I've just begun my journey with Go. If I had to put it in words, I'd say Go is easy. Really, really easy. When you look at a Go program, you can almost always tell what it's doing. Recently, I have had the pleasure of writing Golang at my work for a RFID communication server. I was tasked to convert the pre-existing Windows x64 binary into a background daemon. Thanks to Go's rich ecosystem of libraries, I was able to use this [`service`](https://github.com/kardianos/service) package to compile the RFID websocket server project into a Windows service. Go works so fast. It's hard to wrap my head around the fact that Go, even though it cleans up its own memory, can run this fast. It's been the backbone for building important software like [Docker](https://www.slideshare.net/slideshow/docker-and-go-why-did-we-decide-to-write-docker-in-go/28015076), the [Cockroach database](https://github.com/cockroachdb/cockroach) and many more.
 
-This is just the beginning for me. I’ll write more about Go as I get more experienced in it. I’m excited to see what I can build using this beautifully simple language. Wish me luck 🍀
+This is just the start for me. I'll share more about Go as I learn more about it. I can't wait to see what I can make with this super easy language. Wish me luck! ✌
+
