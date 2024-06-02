@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <title>Trying GoLang for the first time - Sushant Rajbanshi</title><meta name="description" content="Welcome to my Code Blog"><meta property="og:title" content="Trying GoLang for the first time" />
+<meta property="og:description" content="As someone who has been involved in software development for over 3 years, I have primarily worked with JavaScript -and nowadays Typescript mostly- although I have also used languages like Python for specific projects. In this article, I want to share my initial impressions of the Go programming language as a web developer. I don&rsquo;t intend for this to be a negative critique of JavaScript, as there are already plenty of those." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://f0-x.github.io/posts/ts-dev-tries-go/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2024-06-01T00:00:00+01:15" />
+<meta property="article:modified_time" content="2024-06-02T13:01:33+05:45" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Trying GoLang for the first time"/>
+<meta name="twitter:description" content="As someone who has been involved in software development for over 3 years, I have primarily worked with JavaScript -and nowadays Typescript mostly- although I have also used languages like Python for specific projects. In this article, I want to share my initial impressions of the Go programming language as a web developer. I don&rsquo;t intend for this to be a negative critique of JavaScript, as there are already plenty of those."/>
+<meta name="application-name" content="丂ㄩ丂卄卂几ㄒ">
+<meta name="apple-mobile-web-app-title" content="丂ㄩ丂卄卂几ㄒ"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://f0-x.github.io/posts/ts-dev-tries-go/" /><link rel="prev" href="https://f0-x.github.io/posts/js-map-vs-array/" /><link rel="stylesheet" href="/css/page.min.css"><link rel="stylesheet" href="/css/home.min.css"><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Trying GoLang for the first time",
+        "inLanguage": "en-us",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/f0-x.github.io\/posts\/ts-dev-tries-go\/"
+        },"genre": "posts","keywords": "golang, typescript","wordcount":  1473 ,
+        "url": "https:\/\/f0-x.github.io\/posts\/ts-dev-tries-go\/","datePublished": "2024-06-01T00:00:00+01:15","dateModified": "2024-06-02T13:01:33+05:45","publisher": {
+            "@type": "Organization",
+            "name": "Sushant Rajbanshi"},"author": {
+                "@type": "Person",
+                "name": "Sushant Rajbanshi"
+            },"description": ""
+    }
+    </script></head><body data-header-desktop="" data-header-mobile=""><script>(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('light' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'light' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="Sushant Rajbanshi">丂ㄩ丂卄卂几ㄒ</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"> Posts </a><a class="menu-item" href="/tags/"> Tags </a><a class="menu-item" href="/categories/"> Categories </a><a class="menu-item" href="http://chaudharysushant.com.np" rel="noopener noreffer" target="_blank"> About Me </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-desktop">
+                        <a href="#" class="search-button search-toggle" id="search-toggle-desktop" title="Search">
+                            <i class="fa-solid fa-search fa-fw"></i>
+                        </a>
+                        <a href="#" class="search-button search-clear" id="search-clear-desktop" title="Clear">
+                            <i class="fa-solid fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fa-solid fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </span><a class="menu-item" href="/index.xml" title="RSS"><i class="fa-solid fa-rss fa-fw" title="RSS"></i> </a><a href="#" onclick="return false;" class="menu-item theme-switch" title="Switch Theme">
+                    <i class="fa-solid fa-adjust fa-fw"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="Sushant Rajbanshi">丂ㄩ丂卄卂几ㄒ</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-mobile">
+                        <a href="#" class="search-button search-toggle" id="search-toggle-mobile" title="Search">
+                            <i class="fa-solid fa-search fa-fw"></i>
+                        </a>
+                        <a href="#" class="search-button search-clear" id="search-clear-mobile" title="Clear">
+                            <i class="fa-solid fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fa-solid fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </div>
+                    <a href="#" class="search-cancel" id="search-cancel-mobile">
+                        Cancel
+                    </a>
+                </div><a class="menu-item" href="/posts/" title="">Posts</a><a class="menu-item" href="/tags/" title="">Tags</a><a class="menu-item" href="/categories/" title="">Categories</a><a class="menu-item" href="http://chaudharysushant.com.np" title="" rel="noopener noreffer" target="_blank">About Me</a><div class="menu-item"><a href="/index.xml" title="RSS"><i class="fa-solid fa-rss fa-fw" title="RSS"></i> </a>
+                <span>&nbsp;|&nbsp;</span><a href="#" onclick="return false;" class="theme-switch" title="Switch Theme">
+                    <i class="fa-solid fa-adjust fa-fw"></i>
+                </a>
+            </div></div>
+    </div>
+</header><div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+</div>
+<div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+</div><main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">Contents</h2>
+            <div class="toc-content always-active" id="toc-content-auto"></div>
+        </div><article class="page single" data-toc="enable"><div class="featured-image"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="images/golang-exciting.jpeg"
+        data-srcset="/posts/ts-dev-tries-go/images/golang-exciting.jpeg, images/golang-exciting.jpeg 1.5x, /posts/ts-dev-tries-go/images/golang-exciting.jpeg 2x"
+        data-sizes="auto"
+        alt="/posts/ts-dev-tries-go/images/golang-exciting.jpeg"
+        title="/posts/ts-dev-tries-go/images/golang-exciting.jpeg" /></div><div class="single-card" data-image="true"><h2 class="single-title animated flipInX">Trying GoLang for the first time</h2><div class="post-meta">
+                <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fa-solid fa-user-circle fa-fw"></i>Sushant Rajbanshi</a></span>&nbsp;<span class="post-category">published in <a href="/categories/languages/"><i class="fa-regular fa-folder fa-fw"></i>languages</a>&nbsp;<a href="/categories/programming/"><i class="fa-regular fa-folder fa-fw"></i>programming</a></span></div>
+                <div class="post-meta-line"><span><i class="fa-regular fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2024-06-01">2024-06-01</time></span>&nbsp;<span><i class="fa-solid fa-pencil-alt fa-fw"></i>&nbsp;1473 words</span>&nbsp;
+                    <span><i class="fa-regular fa-clock fa-fw"></i>&nbsp;7 minutes</span>&nbsp;</div>
+            </div>
+            
+            <hr><div class="details toc" id="toc-static"  data-kept="">
+                    <div class="details-summary toc-title">
+                        <span>Contents</span>
+                        <span><i class="details-icon fa-solid fa-angle-right"></i></span>
+                    </div>
+                    <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#simple-type-system-">Simple type system 🎹</a></li>
+    <li><a href="#a-single-way-to-do-things">A single way to do things</a></li>
+    <li><a href="#explicit-error-handling">Explicit error handling</a></li>
+    <li><a href="#the-defer-statment-a-simple-way-to-handle-cleanup-tasks">The <code>defer</code> statment: A simple way to handle cleanup tasks</a></li>
+    <li><a href="#type-conversion-is-explicit">Type conversion is explicit</a></li>
+    <li><a href="#give-break-a-break">Give <code>break</code> a break:</a></li>
+    <li><a href="#pointers-">Pointers ↗↘↙↖</a></li>
+    <li><a href="#still-a-long-way-to-go">Still a Long Way to Go</a></li>
+  </ul>
+</nav></div>
+                </div><div class="content" id="content"><p>As someone who has been involved in software development for over 3 years, I have primarily worked with JavaScript -<em>and nowadays Typescript mostly</em>- although I have also used languages like Python for specific projects. In this article, I want to share my initial impressions of the Go programming language as a web developer. I don&rsquo;t intend for this to be a negative critique of JavaScript, as there are already plenty of those. Instead, I will highlight a few aspects of Go that I find particularly interesting and cool.</p>
+<h2 id="simple-type-system-">Simple type system 🎹</h2>
+<p>I really love TypeScript. It has completely changed the way I write Frontend by reducing the need for excessive console logging. However, there are times when I find the type system to be quite complex. Especially when I&rsquo;m working on large projects, I often have to deal with convoluted type manipulations. And to make matters worse, the error messages can be really confusing and not very helpful. It can be quite frustrating trying to understand what went wrong.</p>
+<figure><img src="images/really-long-ts-error.png"
+         alt="Very long Typescript Error 😭"/><figcaption>
+            <p><em>Very long Typescript Error</em> 😭</p>
+        </figcaption>
+</figure>
+
+<p>Go&rsquo;s type system is simple and straightforward. It includes common primitives like int and string, as well as arrays, slices, structs, interfaces, and functions. Generics were also <a href="https://go.dev/blog/intro-generics" target="_blank" rel="noopener noreffer">introduced later on</a>. The compiler is highly efficient and provides concise and helpful error messages in most cases.</p>
+<h2 id="a-single-way-to-do-things">A single way to do things</h2>
+<p>While it may initially seem limiting, the fact that Go provides only one approach for each task makes it a straightforward language to work with. This simplicity is especially beneficial for large teams working on extensive codebases. Whether a junior or senior developer, they would produce the same code when solving the same problem.</p>
+<p>In Go, there is only one way to create a loop:</p>
+<p><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="nx">sum</span> <span class="o">:=</span> <span class="mi">0</span>
+<span class="k">for</span> <span class="nx">i</span> <span class="o">:=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="p">&lt;</span> <span class="mi">10</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span> <span class="p">{</span>
+    <span class="nx">sum</span> <span class="o">+=</span> <span class="nx">i</span>
+<span class="p">}</span>
+    <span class="nx">fmt</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="nx">sum</span><span class="p">)</span></code></pre></td></tr></table>
+</div>
+</div>
+The <code>init</code> and <code>post</code> statements are not required in Go. By removing the semicolons, the <code>for</code> loop can be transformed into a <code>while</code> loop:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="nx">sum</span> <span class="o">:=</span> <span class="mi">1</span>
+<span class="k">for</span> <span class="nx">sum</span> <span class="p">&lt;</span> <span class="mi">1000</span> <span class="p">{</span>
+    <span class="nx">sum</span> <span class="o">+=</span> <span class="nx">sum</span>
+<span class="p">}</span>
+    <span class="nx">fmt</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="nx">sum</span><span class="p">)</span>
+    
+</code></pre></td></tr></table>
+</div>
+</div>
+<p>If you omit the loop condition, you get an inifinite loop:</p>
+<pre><code><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-go" data-lang="go">    <span class="k">for</span> <span class="p">{</span>
+    	<span class="c1">// runs forever
+</span><span class="c1"></span>    <span class="p">}</span>
+    
+</code></pre></td></tr></table>
+</div>
+</div>
+</code></pre>
+<h2 id="explicit-error-handling">Explicit error handling</h2>
+<p>In JavaScript development, it is often the case that we return errors as regular JavaScript objects instead of throwing instances of the built-in <code>Error</code> class. The act of throwing should only be used when intentionally crashing the program. This is because JavaScript is <a href="https://groovetechnology.com/blog/why-javascript-is-single-threaded/" target="_blank" rel="noopener noreffer">single-threaded and synchronous</a>, so throwing an error will stop the execution of the program. This can be problematic in some cases, especially when working with asynchronous code. Additionally, JavaScript has a built-in <code>try...catch</code> statement that can be used to catch errors and handle them gracefully.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript">    <span class="k">try</span> <span class="p">{</span>
+      <span class="k">throw</span> <span class="k">new</span> <span class="nb">Error</span><span class="p">(</span><span class="s1">&#39;This is an error&#39;</span><span class="p">);</span>
+    <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="nx">error</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="nx">error</span><span class="p">.</span><span class="nx">message</span><span class="p">);</span>
+    <span class="p">}</span></code></pre></td></tr></table>
+</div>
+</div>
+<p>In Go, <a href="https://go.dev/blog/error-handling-and-go" target="_blank" rel="noopener noreffer">error handling</a> is built-in and follows a different approach. Errors are returned as values, and they are explicitly handled using <code>if err != nil</code> checks. If a program needs to crash, the <code>panic</code> keyword can be used. Additionally, Go provides the <code>recover</code> statement to recover from a panic. Although writing error handling code in this manner may seem complex, it greatly enhances readability, which is a valuable trade-off in my opinion.</p>
+<h2 id="the-defer-statment-a-simple-way-to-handle-cleanup-tasks">The <code>defer</code> statment: A simple way to handle cleanup tasks</h2>
+<p>For those of you familiar to React&rsquo;s useEffect&rsquo;s cleanup function, the <code>defer</code> statement in Go is similar. The defer statement in Go allows you to postpone the execution of a function until the surrounding function finishes. Let&rsquo;s take a look at an example where I open a file to copy its contents to another file:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="hl"><span class="lnt"> 6
+</span></span><span class="hl"><span class="lnt"> 7
+</span></span><span class="hl"><span class="lnt"> 8
+</span></span><span class="hl"><span class="lnt"> 9
+</span></span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-go" data-lang="go">    <span class="kd">func</span> <span class="nf">CopyFile</span><span class="p">(</span><span class="nx">dstName</span><span class="p">,</span> <span class="nx">srcName</span> <span class="kt">string</span><span class="p">)</span> <span class="p">(</span><span class="nx">written</span> <span class="kt">int64</span><span class="p">,</span> <span class="nx">err</span> <span class="kt">error</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">src</span><span class="p">,</span> <span class="nx">err</span> <span class="o">:=</span> <span class="nx">os</span><span class="p">.</span><span class="nf">Open</span><span class="p">(</span><span class="nx">srcName</span><span class="p">)</span>
+        <span class="k">if</span> <span class="nx">err</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
+            <span class="k">return</span>
+        <span class="p">}</span>
+<span class="hl">        <span class="nx">dst</span><span class="p">,</span> <span class="nx">err</span> <span class="o">:=</span> <span class="nx">os</span><span class="p">.</span><span class="nf">Create</span><span class="p">(</span><span class="nx">dstName</span><span class="p">)</span>
+</span><span class="hl">        <span class="k">if</span> <span class="nx">err</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
+</span><span class="hl">            <span class="k">return</span>
+</span><span class="hl">        <span class="p">}</span>
+</span>        <span class="nx">written</span><span class="p">,</span> <span class="nx">err</span> <span class="p">=</span> <span class="nx">io</span><span class="p">.</span><span class="nf">Copy</span><span class="p">(</span><span class="nx">dst</span><span class="p">,</span> <span class="nx">src</span><span class="p">)</span>
+        <span class="nx">dst</span><span class="p">.</span><span class="nf">Close</span><span class="p">()</span>
+        <span class="nx">src</span><span class="p">.</span><span class="nf">Close</span><span class="p">()</span>
+        <span class="k">return</span>
+    <span class="p">}</span></code></pre></td></tr></table>
+</div>
+</div>
+<div class="details admonition danger open">
+        <div class="details-summary admonition-title">
+            <i class="icon fa-solid fa-skull-crossbones fa-fw"></i>This works, but there&#39;s a bug<i class="details-icon fa-solid fa-angle-right fa-fw"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content">If the call to <code>os.Create</code> fails, the function will return without closing the src file. This can be easily fixed by adding a call to <code>src.Close</code> before the second return statement, but if the function were more complex the problem might not be so easily noticed and resolved. By introducing defer statements we can ensure that the files are always closed:</div>
+        </div>
+    </div>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="hl"><span class="lnt"> 6
+</span></span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-go" data-lang="go">    <span class="kd">func</span> <span class="nf">CopyFile</span><span class="p">(</span><span class="nx">dstName</span><span class="p">,</span> <span class="nx">srcName</span> <span class="kt">string</span><span class="p">)</span> <span class="p">(</span><span class="nx">written</span> <span class="kt">int64</span><span class="p">,</span> <span class="nx">err</span> <span class="kt">error</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">src</span><span class="p">,</span> <span class="nx">err</span> <span class="o">:=</span> <span class="nx">os</span><span class="p">.</span><span class="nf">Open</span><span class="p">(</span><span class="nx">srcName</span><span class="p">)</span>
+        <span class="k">if</span> <span class="nx">err</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
+            <span class="k">return</span>
+        <span class="p">}</span>
+<span class="hl">        <span class="k">defer</span> <span class="nx">src</span><span class="p">.</span><span class="nf">Close</span><span class="p">()</span>
+</span>
+        <span class="nx">dst</span><span class="p">,</span> <span class="nx">err</span> <span class="o">:=</span> <span class="nx">os</span><span class="p">.</span><span class="nf">Create</span><span class="p">(</span><span class="nx">dstName</span><span class="p">)</span>
+        <span class="k">if</span> <span class="nx">err</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
+            <span class="k">return</span>
+        <span class="p">}</span>
+        <span class="k">defer</span> <span class="nx">dst</span><span class="p">.</span><span class="nf">Close</span><span class="p">()</span>
+
+        <span class="k">return</span> <span class="nx">io</span><span class="p">.</span><span class="nf">Copy</span><span class="p">(</span><span class="nx">dst</span><span class="p">,</span> <span class="nx">src</span><span class="p">)</span>
+    <span class="p">}</span></code></pre></td></tr></table>
+</div>
+</div>
+<p>Defer statements allow us to think about closing each file right after opening it, guaranteeing that, regardless of the number of return statements in the function, the files will be closed.</p>
+<p>This example is inspired from an excellent article: <a href="https://go.dev/blog/defer-panic-and-recover" target="_blank" rel="noopener noreffer">defer, panic, and recover</a> by Andrew Gerrand. It’s a fantastic read and it expands on the rules of <code>defer</code> and how it works in tandem with other unique control flow statements like <code>panic</code> and <code>recover</code>.</p>
+<h2 id="type-conversion-is-explicit">Type conversion is explicit</h2>
+<p>One of the main subjects of memes in JavaScript is its ridiculous type coercion. JavaScript attempts to automatically convert the types of values based on the operation being performed. Although type coercion can be useful in certain situations, it frequently results in bugs and confusion for beginners.</p>
+<figure><img src="images/5d35082832a25ca9c3f971f42c98bcde8c46cca2.png"/>
+</figure>
+
+<p><strong>In Go</strong>, explicit type conversion is required when assigning values between different types. Attempting to assign a <code>string</code> to an <code>int</code> or perform operations between mismatched types will result in a compilation error. Although this may add some complexity to writing Go code, it greatly enhances code readability and maintainability, which is a common characteristic of the language.</p>
+<h2 id="give-break-a-break">Give <code>break</code> a break:</h2>
+<p>Here’s a JavaScript switch statement from <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/switch#try_it" target="_blank" rel="noopener noreffer">MDN</a>:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript">    <span class="kr">const</span> <span class="nx">expr</span> <span class="o">=</span> <span class="s1">&#39;Papayas&#39;</span><span class="p">;</span>
+    <span class="k">switch</span> <span class="p">(</span><span class="nx">expr</span><span class="p">)</span> <span class="p">{</span>
+      <span class="k">case</span> <span class="s1">&#39;Oranges&#39;</span><span class="o">:</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;Oranges are $0.59 a pound.&#39;</span><span class="p">);</span>
+        <span class="k">break</span><span class="p">;</span>
+      <span class="k">case</span> <span class="s1">&#39;Mangoes&#39;</span><span class="o">:</span>
+      <span class="k">case</span> <span class="s1">&#39;Papayas&#39;</span><span class="o">:</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;Mangoes and papayas are $2.79 a pound.&#39;</span><span class="p">);</span>
+        <span class="k">break</span><span class="p">;</span>
+      <span class="k">default</span><span class="o">:</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`Sorry, we are out of </span><span class="si">${</span><span class="nx">expr</span><span class="si">}</span><span class="sb">.`</span><span class="p">);</span>
+    <span class="p">}</span></code></pre></td></tr></table>
+</div>
+</div>
+<p>Now in Go:
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-go" data-lang="go">    <span class="nx">expr</span> <span class="o">:=</span> <span class="s">&#34;Papayas&#34;</span>
+    <span class="k">switch</span> <span class="nx">expr</span> <span class="p">{</span>
+    <span class="k">case</span> <span class="s">&#34;Oranges&#34;</span><span class="p">:</span>
+    	<span class="nx">fmt</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="s">&#34;Oranges are $0.59 a pound.&#34;</span><span class="p">)</span>
+    <span class="k">case</span> <span class="s">&#34;Mangoes&#34;</span><span class="p">,</span> <span class="s">&#34;Papayas&#34;</span><span class="p">:</span>
+    	<span class="nx">fmt</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="s">&#34;Mangoes and papayas are $2.79 a pound.&#34;</span><span class="p">)</span>
+    <span class="k">default</span><span class="p">:</span>
+    	<span class="nx">fmt</span><span class="p">.</span><span class="nf">Printf</span><span class="p">(</span><span class="s">&#34;Sorry, we are out of %s.&#34;</span><span class="p">,</span> <span class="nx">expr</span><span class="p">)</span>
+    <span class="p">}</span></code></pre></td></tr></table>
+</div>
+</div></p>
+<p>In Go, the switch statement works differently compared to C, Java, JavaScript, and PHP. In Go, only the selected case is executed, unlike other languages where all subsequent cases are also executed. This eliminates the need for a break statement at the end of each case, as required in those languages, as Go handles it automatically.</p>
+<h2 id="pointers-">Pointers ↗↘↙↖</h2>
+<p>In Go, function arguments are passed by value, which means they are copied by default. This rule also applies to arrays and structs. However, you have the option to explicitly define a function that takes a pointer as an argument. Pointers store the memory address of a value. Here&rsquo;s an example taken from the <a href="https://go.dev/tour/moretypes/1" target="_blank" rel="noopener noreffer">official Go tutorial</a>:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-go" data-lang="go">    <span class="kn">package</span> <span class="nx">main</span>
+    <span class="kn">import</span> <span class="s">&#34;fmt&#34;</span>
+    <span class="kd">func</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+    	<span class="nx">i</span><span class="p">,</span> <span class="nx">j</span> <span class="o">:=</span> <span class="mi">42</span><span class="p">,</span> <span class="mi">2701</span>
+    	<span class="nx">p</span> <span class="o">:=</span> <span class="o">&amp;</span><span class="nx">i</span>         <span class="c1">// point to i
+</span><span class="c1"></span>    	<span class="nx">fmt</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="o">*</span><span class="nx">p</span><span class="p">)</span> <span class="c1">// read i through the pointer
+</span><span class="c1"></span>    	<span class="o">*</span><span class="nx">p</span> <span class="p">=</span> <span class="mi">21</span>         <span class="c1">// set i through the pointer
+</span><span class="c1"></span>    	<span class="nx">fmt</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="nx">i</span><span class="p">)</span>  <span class="c1">// see the new value of i
+</span><span class="c1"></span>
+    	<span class="nx">p</span> <span class="p">=</span> <span class="o">&amp;</span><span class="nx">j</span>         <span class="c1">// point to j
+</span><span class="c1"></span>    	<span class="o">*</span><span class="nx">p</span> <span class="p">=</span> <span class="o">*</span><span class="nx">p</span> <span class="o">/</span> <span class="mi">37</span>   <span class="c1">// divide j through the pointer
+</span><span class="c1"></span>    	<span class="nx">fmt</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="nx">j</span><span class="p">)</span> <span class="c1">// see the new value of j
+</span><span class="c1"></span>    <span class="p">}</span></code></pre></td></tr></table>
+</div>
+</div>
+<p>Again, this makes Golang so easy to read and maintain.</p>
+<h2 id="still-a-long-way-to-go">Still a Long Way to Go</h2>
+<p>I&rsquo;ve just begun my journey with Go. If I had to put it in words, I&rsquo;d say Go is easy. Really, really easy. When you look at a Go program, you can almost always tell what it&rsquo;s doing. Recently, I have had the pleasure of writing Golang at my work for a RFID communication server. I was tasked to convert the pre-existing Windows x64 binary into a background daemon. Thanks to Go&rsquo;s rich ecosystem of libraries, I was able to use this <a href="https://github.com/kardianos/service" target="_blank" rel="noopener noreffer"><code>service</code></a> package to compile the RFID websocket server project into a Windows service. Go works so fast. It&rsquo;s hard to wrap my head around the fact that Go, even though it cleans up its own memory, can run this fast. It&rsquo;s been the backbone for building important software like <a href="https://www.slideshare.net/slideshow/docker-and-go-why-did-we-decide-to-write-docker-in-go/28015076" target="_blank" rel="noopener noreffer">Docker</a>, the <a href="https://github.com/cockroachdb/cockroach" target="_blank" rel="noopener noreffer">Cockroach database</a> and many more.</p>
+<p>This is just the start for me. I&rsquo;ll share more about Go as I learn more about it. I can&rsquo;t wait to see what I can make with this super easy language. Wish me luck! ✌</p>
+</div><div class="post-footer" id="post-footer">
+    <div class="post-info"><div class="post-info-tag"><span><a href="/tags/golang/">golang</a>
+                </span><span><a href="/tags/typescript/">typescript</a>
+                </span></div><div class="post-info-line"><div class="post-info-mod">
+                <span>Updated on 2024-06-02&nbsp;<a class="git-hash" href="https://github.com/f0-x/blog/commit/14cb838410f09c8a63ccc5eb97a8a18d83e4b143" target="_blank" title="committed&nbsp;by&nbsp;Sushant Rajbanshi(sushant.rajbanshi@webo.digital)&nbsp;14cb838:&nbsp;chore: Publish new blog article">
+                            <i class="fa-solid fa-hashtag fa-fw"></i>14cb838</a></span>
+            </div><div class="post-info-mod"></div>
+        </div><div class="post-info-share">
+            <span><a href="#" onclick="return false;" title="Share on Twitter" data-sharer="twitter" data-url="https://f0-x.github.io/posts/ts-dev-tries-go/" data-title="Trying GoLang for the first time" data-hashtags="golang,typescript"><i class="fa-brands fa-square-x-twitter fa-fw"></i></a><a href="#" onclick="return false;" title="Share on Facebook" data-sharer="facebook" data-url="https://f0-x.github.io/posts/ts-dev-tries-go/" data-hashtag="golang"><i class="fa-brands fa-facebook-square fa-fw"></i></a><a href="#" onclick="return false;" title="Share on Linkedin" data-sharer="linkedin" data-url="https://f0-x.github.io/posts/ts-dev-tries-go/"><i class="fa-brands fa-linkedin fa-fw"></i></a><a href="#" onclick="return false;" title="Share on Reddit" data-sharer="reddit" data-url="https://f0-x.github.io/posts/ts-dev-tries-go/"><i class="fa-brands fa-reddit fa-fw"></i></a></span>
+        </div></div><div class="post-nav"><a href="/posts/js-map-vs-array/" class="prev" rel="prev" title="ES6 Maps are underrated!"><i class="fa-solid fa-angle-left fa-fw"></i>Previous Post</a></div></div>
+</div><div id="comments" class="single-card"><div id="gitalk"></div><noscript>
+                Please enable JavaScript to view the comments powered by <a href="https://github.com/gitalk/gitalk"></a>Gitalk</a>.
+            </noscript></div></article></div>
+            </main>
+            <footer class="footer"><div class="footer-container"><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="fa-regular fa-copyright fa-fw"></i><span itemprop="copyrightYear">2021 - 2024</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/">Sushant Rajbanshi</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+</div>
+</footer>
+        </div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Back to Top">
+                <i class="fa-solid fa-chevron-up fa-fw"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
+                <i class="fa-solid fa-comment-alt fa-fw"></i>
+            </a></div><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="/lib/animate/animate.min.css"><link rel="stylesheet" href="/lib/gitalk/gitalk.min.css"><link rel="stylesheet" href="/lib/lightgallery/lightgallery.min.css"><link rel="stylesheet" href="/lib/katex/katex.min.css"><link rel="stylesheet" href="/lib/katex/copy-tex.min.css"><link rel="stylesheet" href="/lib/cookieconsent/cookieconsent.min.css"><script src="https://polyfill.io/v3/polyfill.min.js?features=Array.prototype.fill%2CArray.prototype.find%2CArray.from%2CIntersectionObserver%2CMath.sign%2CObject.assign%2CPromise%2CObject.entries%2Chtml5shiv%2CObject.values%2Cfetch%2CElement.prototype.after"></script><script src="/lib/object-fit-images/ofi.min.js"></script><script src="/lib/gitalk/gitalk.min.js"></script><script src="/lib/autocomplete/autocomplete.min.js"></script><script src="/lib/lunr/lunr.min.js"></script><script src="/lib/lazysizes/lazysizes.min.js"></script><script src="/lib/lightgallery/lightgallery.min.js"></script><script src="/lib/lightgallery/lg-thumbnail.min.js"></script><script src="/lib/lightgallery/lg-zoom.min.js"></script><script src="/lib/clipboard/clipboard.min.js"></script><script src="/lib/sharer/sharer.min.js"></script><script src="/lib/katex/katex.min.js"></script><script src="/lib/katex/auto-render.min.js"></script><script src="/lib/katex/copy-tex.min.js"></script><script src="/lib/katex/mhchem.min.js"></script><script src="/lib/cookieconsent/cookieconsent.min.js"></script><script>window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":10},"comment":{"gitalk":{"admin":["f0-x"],"clientID":"60eb8e8e31fc637ce015","clientSecret":"4a6eaba4e2d62428a8a1c85347e2d5e873a65898","id":"2024-06-01T00:00:00+01:15","owner":"f0-x","repo":"f0-x.github.io","title":"Trying GoLang for the first time"}},"cookieconsent":{"content":{"dismiss":"Agree","link":"Learn more","message":"Notice. This blog uses cookies to provide necessary website functionality, improve your experience and analyze our traffic. By using our website, you agree to our Privacy Policy and our cookies usage."},"enable":true,"palette":{"button":{"background":"#f0f0f0"},"popup":{"background":"#1aa3ff"}},"theme":"edgeless"},"lightGallery":{"actualSize":false,"exThumbImage":"data-thumbnail","hideBarsDelay":2000,"selector":".lightgallery","speed":400,"thumbContHeight":80,"thumbWidth":80,"thumbnail":true},"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"highlightTag":"em","lunrIndexURL":"/index.json","maxResultLength":10,"noResultsFound":"No results found","snippetLength":30,"type":"lunr"}};</script><script src="/js/theme.min.js"></script></body></html>
