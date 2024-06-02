@@ -78,7 +78,7 @@ enableEmoji = true
 # App icon config
   [params.app]
     # optional site title override for the app when added to an iOS home screen or Android launcher
-    title = "🧿"
+    title = "丂ㄩ丂卄卂几ㄒ"
     # whether to omit favicon resource links
     noFavicon = false
     # modern SVG favicon to use in place of older style .png and .ico files
@@ -117,7 +117,7 @@ enableEmoji = true
       # URL of the LOGO
       logo = ""
       # title name
-      name = "❛🧿❜"
+      name = "丂ㄩ丂卄卂几ㄒ"
       # you can add extra information before the name (HTML format is supported), such as icons
       pre = ""
       # you can add extra information after the name (HTML format is supported), such as icons
