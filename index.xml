@@ -3,15 +3,15 @@
         <title>Sushant Rajbanshi</title>
         <link>https://f0-x.github.io/</link>
         <description>Welcome to my Code Blog</description>
-        <generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Sat, 01 Jun 2024 00:00:00 &#43;0115</lastBuildDate>
+        <generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Sat, 08 Jun 2024 00:00:00 &#43;0115</lastBuildDate>
             <atom:link href="https://f0-x.github.io/index.xml" rel="self" type="application/rss+xml" />
         <item>
-    <title>Trying GoLang for the first time</title>
-    <link>https://f0-x.github.io/posts/ts-dev-tries-go/</link>
-    <pubDate>Sat, 01 Jun 2024 00:00:00 &#43;0115</pubDate><guid>https://f0-x.github.io/posts/ts-dev-tries-go/</guid>
+    <title>How I Approach State Management on React</title>
+    <link>https://f0-x.github.io/posts/react-state-management/</link>
+    <pubDate>Sat, 08 Jun 2024 00:00:00 &#43;0115</pubDate><guid>https://f0-x.github.io/posts/react-state-management/</guid>
     <description><![CDATA[<div class="featured-image">
-                <img src="/images/golang-exciting.jpeg" referrerpolicy="no-referrer">
-            </div>As someone who has been involved in software development for over 3 years, I have primarily worked with JavaScript -and nowadays Typescript mostly- although I have also used languages like Python for specific projects. In this article, I want to share my initial impressions of the Go programming language as a web developer. I don&rsquo;t intend for this to be a negative critique of JavaScript, as there are already plenty of those.]]></description>
+                <img src="/images/react-state-options.jpg" referrerpolicy="no-referrer">
+            </div>Us React developers, we often find ourselves grappling with the age-old question: Which state management approach should you use ?  It depends 🤡   React offers a variety of state management solutions, each with its own strengths and weaknesses, and the choice ultimately depends on the specific requirements of your project. To help navigate this decision, I follow this self-made flow chart which serves as an excellent guide, taking into account various factors such as data sharing requirements, data fetching needs, and whether you&rsquo;re dealing with forms or multiple components.]]></description>
 </item>
 <item>
     <title>ES6 Maps are underrated!</title>

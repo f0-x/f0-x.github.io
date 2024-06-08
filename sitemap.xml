@@ -2,21 +2,18 @@
     xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
     xmlns:xhtml="http://www.w3.org/1999/xhtml"
     ><url>
-            <loc>https://f0-x.github.io/categories/</loc><lastmod>2024-06-02T17:13:32&#43;05:45</lastmod></url><url>
-            <loc>https://f0-x.github.io/tags/golang/</loc><lastmod>2024-06-02T17:13:32&#43;05:45</lastmod></url><url>
-            <loc>https://f0-x.github.io/categories/languages/</loc><lastmod>2024-06-02T17:13:32&#43;05:45</lastmod></url><url>
-            <loc>https://f0-x.github.io/posts/</loc><lastmod>2024-06-02T17:13:32&#43;05:45</lastmod></url><url>
-            <loc>https://f0-x.github.io/categories/programming/</loc><lastmod>2024-06-02T17:13:32&#43;05:45</lastmod></url><url>
-            <loc>https://f0-x.github.io/</loc><lastmod>2024-06-02T17:13:32&#43;05:45</lastmod></url><url>
-            <loc>https://f0-x.github.io/tags/</loc><lastmod>2024-06-02T17:13:32&#43;05:45</lastmod></url><url>
-            <loc>https://f0-x.github.io/posts/ts-dev-tries-go/</loc><lastmod>2024-06-02T17:13:32&#43;05:45</lastmod></url><url>
-            <loc>https://f0-x.github.io/tags/typescript/</loc><lastmod>2024-06-02T17:13:32&#43;05:45</lastmod></url><url>
+            <loc>https://f0-x.github.io/categories/</loc><lastmod>2024-06-08T20:59:59&#43;05:45</lastmod></url><url>
+            <loc>https://f0-x.github.io/categories/frontend/</loc><lastmod>2024-06-08T20:59:59&#43;05:45</lastmod></url><url>
+            <loc>https://f0-x.github.io/posts/react-state-management/</loc><lastmod>2024-06-08T20:59:59&#43;05:45</lastmod></url><url>
+            <loc>https://f0-x.github.io/tags/javascript/</loc><lastmod>2024-06-08T20:59:59&#43;05:45</lastmod></url><url>
+            <loc>https://f0-x.github.io/posts/</loc><lastmod>2024-06-08T20:59:59&#43;05:45</lastmod></url><url>
+            <loc>https://f0-x.github.io/categories/programming/</loc><lastmod>2024-06-08T20:59:59&#43;05:45</lastmod></url><url>
+            <loc>https://f0-x.github.io/tags/reactjs/</loc><lastmod>2024-06-08T20:59:59&#43;05:45</lastmod></url><url>
+            <loc>https://f0-x.github.io/</loc><lastmod>2024-06-08T20:59:59&#43;05:45</lastmod></url><url>
+            <loc>https://f0-x.github.io/tags/</loc><lastmod>2024-06-08T20:59:59&#43;05:45</lastmod></url><url>
             <loc>https://f0-x.github.io/tags/algorithms/</loc><lastmod>2024-06-01T20:09:13&#43;05:45</lastmod></url><url>
             <loc>https://f0-x.github.io/categories/algorithms/</loc><lastmod>2024-06-01T20:09:13&#43;05:45</lastmod></url><url>
             <loc>https://f0-x.github.io/posts/js-map-vs-array/</loc><lastmod>2024-06-01T20:09:13&#43;05:45</lastmod></url><url>
-            <loc>https://f0-x.github.io/categories/frontend/</loc><lastmod>2024-06-01T20:09:13&#43;05:45</lastmod></url><url>
-            <loc>https://f0-x.github.io/tags/javascript/</loc><lastmod>2024-06-01T20:09:13&#43;05:45</lastmod></url><url>
-            <loc>https://f0-x.github.io/tags/reactjs/</loc><lastmod>2024-06-01T20:09:13&#43;05:45</lastmod></url><url>
             <loc>https://f0-x.github.io/posts/tailwind-best-practises/</loc><lastmod>2024-05-06T09:19:30&#43;05:45</lastmod></url><url>
             <loc>https://f0-x.github.io/tags/tailwind/</loc><lastmod>2024-05-06T09:19:30&#43;05:45</lastmod></url><url>
             <loc>https://f0-x.github.io/categories/ui/</loc><lastmod>2024-05-06T09:19:30&#43;05:45</lastmod></url><url>

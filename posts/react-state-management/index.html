@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <title>How I Approach State Management on React - Sushant Rajbanshi</title><meta name="description" content="Welcome to my Code Blog"><meta property="og:title" content="How I Approach State Management on React" />
+<meta property="og:description" content="Us React developers, we often find ourselves grappling with the age-old question: Which state management approach should you use ?  It depends 🤡   React offers a variety of state management solutions, each with its own strengths and weaknesses, and the choice ultimately depends on the specific requirements of your project. To help navigate this decision, I follow this self-made flow chart which serves as an excellent guide, taking into account various factors such as data sharing requirements, data fetching needs, and whether you&rsquo;re dealing with forms or multiple components." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://f0-x.github.io/posts/react-state-management/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2024-06-08T00:00:00+01:15" />
+<meta property="article:modified_time" content="2024-06-08T20:59:59+05:45" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="How I Approach State Management on React"/>
+<meta name="twitter:description" content="Us React developers, we often find ourselves grappling with the age-old question: Which state management approach should you use ?  It depends 🤡   React offers a variety of state management solutions, each with its own strengths and weaknesses, and the choice ultimately depends on the specific requirements of your project. To help navigate this decision, I follow this self-made flow chart which serves as an excellent guide, taking into account various factors such as data sharing requirements, data fetching needs, and whether you&rsquo;re dealing with forms or multiple components."/>
+<meta name="application-name" content="丂ㄩ丂卄卂几ㄒ">
+<meta name="apple-mobile-web-app-title" content="丂ㄩ丂卄卂几ㄒ"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://f0-x.github.io/posts/react-state-management/" /><link rel="prev" href="https://f0-x.github.io/posts/js-map-vs-array/" /><link rel="stylesheet" href="/css/page.min.css"><link rel="stylesheet" href="/css/home.min.css"><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "How I Approach State Management on React",
+        "inLanguage": "en-us",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/f0-x.github.io\/posts\/react-state-management\/"
+        },"genre": "posts","keywords": "reactjs, javascript","wordcount":  503 ,
+        "url": "https:\/\/f0-x.github.io\/posts\/react-state-management\/","datePublished": "2024-06-08T00:00:00+01:15","dateModified": "2024-06-08T20:59:59+05:45","publisher": {
+            "@type": "Organization",
+            "name": "Sushant Rajbanshi"},"author": {
+                "@type": "Person",
+                "name": "Sushant Rajbanshi"
+            },"description": ""
+    }
+    </script></head><body data-header-desktop="" data-header-mobile=""><script>(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('light' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'light' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="Sushant Rajbanshi">丂ㄩ丂卄卂几ㄒ</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"> Posts </a><a class="menu-item" href="/tags/"> Tags </a><a class="menu-item" href="/categories/"> Categories </a><a class="menu-item" href="http://chaudharysushant.com.np" rel="noopener noreffer" target="_blank"> About Me </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-desktop">
+                        <a href="#" class="search-button search-toggle" id="search-toggle-desktop" title="Search">
+                            <i class="fa-solid fa-search fa-fw"></i>
+                        </a>
+                        <a href="#" class="search-button search-clear" id="search-clear-desktop" title="Clear">
+                            <i class="fa-solid fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fa-solid fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </span><a class="menu-item" href="/index.xml" title="RSS"><i class="fa-solid fa-rss fa-fw" title="RSS"></i> </a><a href="#" onclick="return false;" class="menu-item theme-switch" title="Switch Theme">
+                    <i class="fa-solid fa-adjust fa-fw"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="Sushant Rajbanshi">丂ㄩ丂卄卂几ㄒ</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-mobile">
+                        <a href="#" class="search-button search-toggle" id="search-toggle-mobile" title="Search">
+                            <i class="fa-solid fa-search fa-fw"></i>
+                        </a>
+                        <a href="#" class="search-button search-clear" id="search-clear-mobile" title="Clear">
+                            <i class="fa-solid fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fa-solid fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </div>
+                    <a href="#" class="search-cancel" id="search-cancel-mobile">
+                        Cancel
+                    </a>
+                </div><a class="menu-item" href="/posts/" title="">Posts</a><a class="menu-item" href="/tags/" title="">Tags</a><a class="menu-item" href="/categories/" title="">Categories</a><a class="menu-item" href="http://chaudharysushant.com.np" title="" rel="noopener noreffer" target="_blank">About Me</a><div class="menu-item"><a href="/index.xml" title="RSS"><i class="fa-solid fa-rss fa-fw" title="RSS"></i> </a>
+                <span>&nbsp;|&nbsp;</span><a href="#" onclick="return false;" class="theme-switch" title="Switch Theme">
+                    <i class="fa-solid fa-adjust fa-fw"></i>
+                </a>
+            </div></div>
+    </div>
+</header><div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+</div>
+<div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+</div><main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">Contents</h2>
+            <div class="toc-content always-active" id="toc-content-auto"></div>
+        </div><article class="page single" data-toc="enable"><div class="featured-image"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="images/react-state-options.jpg"
+        data-srcset="/posts/react-state-management/images/react-state-options.jpg, images/react-state-options.jpg 1.5x, /posts/react-state-management/images/react-state-options.jpg 2x"
+        data-sizes="auto"
+        alt="/posts/react-state-management/images/react-state-options.jpg"
+        title="/posts/react-state-management/images/react-state-options.jpg" /></div><div class="single-card" data-image="true"><h2 class="single-title animated flipInX">How I Approach State Management on React</h2><div class="post-meta">
+                <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fa-solid fa-user-circle fa-fw"></i>Sushant Rajbanshi</a></span>&nbsp;<span class="post-category">published in <a href="/categories/frontend/"><i class="fa-regular fa-folder fa-fw"></i>frontend</a>&nbsp;<a href="/categories/programming/"><i class="fa-regular fa-folder fa-fw"></i>programming</a></span></div>
+                <div class="post-meta-line"><span><i class="fa-regular fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2024-06-08">2024-06-08</time></span>&nbsp;<span><i class="fa-solid fa-pencil-alt fa-fw"></i>&nbsp;503 words</span>&nbsp;
+                    <span><i class="fa-regular fa-clock fa-fw"></i>&nbsp;3 minutes</span>&nbsp;</div>
+            </div>
+            
+            <hr><div class="details toc" id="toc-static"  data-kept="">
+                    <div class="details-summary toc-title">
+                        <span>Contents</span>
+                        <span><i class="details-icon fa-solid fa-angle-right"></i></span>
+                    </div>
+                    <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#plain-state-">Plain State 📃</a></li>
+        <li><a href="#form-state-">Form State 📝</a></li>
+        <li><a href="#shared-state-">Shared State 🌐</a></li>
+        <li><a href="#sharable-via-url-">Sharable via URL? 🔗</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+                </div><div class="content" id="content"><p>Us React developers, we often find ourselves grappling with the age-old question:
+<div class="details admonition question">
+        <div class="details-summary admonition-title">
+            <i class="icon fa-solid fa-question-circle fa-fw"></i>Which state management approach should you use ?<i class="details-icon fa-solid fa-angle-right fa-fw"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content">It depends 🤡</div>
+        </div>
+    </div>
+React offers a variety of state management solutions, each with its own strengths and weaknesses, and the choice ultimately depends on the specific requirements of your project.
+To help navigate this decision, I follow this self-made flow chart which serves as an excellent guide, taking into account various factors such as data sharing requirements, data fetching needs, and whether you&rsquo;re dealing with forms or multiple components.</p>
+<div class="mermaid" id="id-1"></div>
+<h3 id="plain-state-">Plain State 📃</h3>
+<p>If your application has simple state management needs and doesn&rsquo;t require data sharing across multiple components, the built-in <a href="https://reactjs.org/docs/hooks-state.html" target="_blank" rel="noopener noreffer"><code>useState</code></a> or <a href="https://reactjs.org/docs/hooks-reference.html#usereducer" target="_blank" rel="noopener noreffer"><code>useReducer</code></a> hooks, along with component state (<code>useState</code> used within a functional component), can suffice. These hooks provide a straightforward way to manage component-level state without the overhead of additional libraries or abstractions.</p>
+<h3 id="form-state-">Form State 📝</h3>
+<p>When dealing with forms, dedicated form state management libraries like <code>useReducer</code>, <a href="https://formik.org/" target="_blank" rel="noopener noreffer"><code>Formik</code></a>, <a href="https://react-hook-form.com/" target="_blank" rel="noopener noreffer"><code>React Hook Form</code></a>, <a href="https://react-hook-form.com/" target="_blank" rel="noopener noreffer"><code>Tanstack Form</code></a>, or <a href="https://xstate.js.org/" target="_blank" rel="noopener noreffer"><code>XState</code></a> can be extremely helpful. These libraries offer robust form handling capabilities, including validation, error handling, and performance optimizations specific to form data management.</p>
+<h3 id="shared-state-">Shared State 🌐</h3>
+<p>If your application requires sharing state across multiple components, you have several options:</p>
+<h4 id="prop-drilling-or-global-state-">Prop Drilling or Global State 🌎</h4>
+<p>For simple shared state scenarios, you can leverage prop drilling (passing data down the component tree via props) or global state management solutions like <code>localStorage</code>, <code>cookie</code>, <code>IndexedDB</code>, <a href="https://redux.js.org/" target="_blank" rel="noopener noreffer"><code>Redux</code></a>, <a href="https://github.com/pmndrs/zustand" target="_blank" rel="noopener noreffer"><code>Zustand</code></a>, <a href="https://recoiljs.org/" target="_blank" rel="noopener noreffer"><code>Recoil</code></a>, <a href="https://github.com/pmndrs/jotai" target="_blank" rel="noopener noreffer"><code>Jotai</code></a>, <a href="https://github.com/pmndrs/valtio" target="_blank" rel="noopener noreffer"><code>Valtio</code></a>, or <a href="https://xstate.js.org/" target="_blank" rel="noopener noreffer"><code>XState</code></a>. These solutions allow you to store and access shared state across your application.</p>
+<h4 id="route-state-">Route State 📚</h4>
+<p>If the shared state is specific to a particular route or set of routes, you can leverage the built-in state management capabilities of React Router, such as the <code>React Router loader</code> or <code>Tanstack Router loader</code>. These solutions are particularly useful when working with data that needs to be fetched and shared across multiple components within a specific route.</p>
+<h4 id="remote-state-">Remote State 📧</h4>
+<p>For applications that require fetching and sharing data from remote sources, you can use libraries like <a href="https://tanstack.com/query/latest" target="_blank" rel="noopener noreffer"><code>Tanstack Query</code></a>, <a href="https://swr.vercel.app/" target="_blank" rel="noopener noreffer"><code>SWR</code></a>, <a href="https://redux-toolkit.js.org/rtk-query/overview" target="_blank" rel="noopener noreffer"><code>RTK Query</code></a>, or <a href="https://www.apollographql.com/" target="_blank" rel="noopener noreffer"><code>Apollo</code></a> (for GraphQL). These libraries provide efficient data fetching, caching, and state management for remote data, reducing the need for manual cache invalidation and improving overall performance.</p>
+<h3 id="sharable-via-url-">Sharable via URL? 🔗</h3>
+<p>One important consideration when choosing a state management approach is whether the state needs to be shareable via URL. If so, solutions like <code>URL</code> state management or the built-in capabilities of React Router become more relevant.</p>
+<p>By following this flowchart, you can systematically evaluate your application&rsquo;s state management needs and choose the most appropriate solution. Remember, there&rsquo;s no one-size-fits-all approach, and you may need to combine multiple strategies to meet your application&rsquo;s requirements effectively.</p>
+<div class="details admonition tip open">
+        <div class="details-summary admonition-title">
+            <i class="icon fa-solid fa-lightbulb fa-fw"></i>You should remember this!<i class="details-icon fa-solid fa-angle-right fa-fw"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content">State management is a crucial aspect of building complex React applications, and making an informed decision can significantly impact the maintainability, scalability, and performance of your codebase. By leveraging the guidance provided in this flowchart, you can navigate the state management landscape with confidence and build robust, efficient React applications.</div>
+        </div>
+    </div>
+</div><div class="post-footer" id="post-footer">
+    <div class="post-info"><div class="post-info-tag"><span><a href="/tags/reactjs/">reactjs</a>
+                </span><span><a href="/tags/javascript/">javascript</a>
+                </span></div><div class="post-info-line"><div class="post-info-mod">
+                <span>Updated on 2024-06-08&nbsp;<a class="git-hash" href="https://github.com/f0-x/blog/commit/aec3f643e952c561986f41423c030fb0410422bf" target="_blank" title="committed&nbsp;by&nbsp;Sushant Rajbanshi(sushant.rajbanshi@webo.digital)&nbsp;aec3f64:&nbsp;feat: &#34;React State Management&#34; article publish">
+                            <i class="fa-solid fa-hashtag fa-fw"></i>aec3f64</a></span>
+            </div><div class="post-info-mod"></div>
+        </div><div class="post-info-share">
+            <span><a href="#" onclick="return false;" title="Share on Twitter" data-sharer="twitter" data-url="https://f0-x.github.io/posts/react-state-management/" data-title="How I Approach State Management on React" data-hashtags="reactjs,javascript"><i class="fa-brands fa-square-x-twitter fa-fw"></i></a><a href="#" onclick="return false;" title="Share on Facebook" data-sharer="facebook" data-url="https://f0-x.github.io/posts/react-state-management/" data-hashtag="reactjs"><i class="fa-brands fa-facebook-square fa-fw"></i></a><a href="#" onclick="return false;" title="Share on Linkedin" data-sharer="linkedin" data-url="https://f0-x.github.io/posts/react-state-management/"><i class="fa-brands fa-linkedin fa-fw"></i></a><a href="#" onclick="return false;" title="Share on Reddit" data-sharer="reddit" data-url="https://f0-x.github.io/posts/react-state-management/"><i class="fa-brands fa-reddit fa-fw"></i></a></span>
+        </div></div><div class="post-nav"><a href="/posts/js-map-vs-array/" class="prev" rel="prev" title="ES6 Maps are underrated!"><i class="fa-solid fa-angle-left fa-fw"></i>Previous Post</a></div></div>
+</div><div id="comments" class="single-card"><div id="gitalk"></div><noscript>
+                Please enable JavaScript to view the comments powered by <a href="https://github.com/gitalk/gitalk"></a>Gitalk</a>.
+            </noscript></div></article></div>
+            </main>
+            <footer class="footer"><div class="footer-container"><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="fa-regular fa-copyright fa-fw"></i><span itemprop="copyrightYear">2021 - 2024</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/">Sushant Rajbanshi</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+</div>
+</footer>
+        </div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Back to Top">
+                <i class="fa-solid fa-chevron-up fa-fw"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
+                <i class="fa-solid fa-comment-alt fa-fw"></i>
+            </a></div><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="/lib/animate/animate.min.css"><link rel="stylesheet" href="/lib/gitalk/gitalk.min.css"><link rel="stylesheet" href="/lib/lightgallery/lightgallery.min.css"><link rel="stylesheet" href="/lib/katex/katex.min.css"><link rel="stylesheet" href="/lib/katex/copy-tex.min.css"><link rel="stylesheet" href="/lib/cookieconsent/cookieconsent.min.css"><script src="https://polyfill.io/v3/polyfill.min.js?features=Array.prototype.fill%2CArray.prototype.find%2CArray.from%2CIntersectionObserver%2CMath.sign%2CObject.assign%2CPromise%2CObject.entries%2Chtml5shiv%2CObject.values%2Cfetch%2CElement.prototype.after"></script><script src="/lib/object-fit-images/ofi.min.js"></script><script src="/lib/gitalk/gitalk.min.js"></script><script src="/lib/autocomplete/autocomplete.min.js"></script><script src="/lib/lunr/lunr.min.js"></script><script src="/lib/lazysizes/lazysizes.min.js"></script><script src="/lib/lightgallery/lightgallery.min.js"></script><script src="/lib/lightgallery/lg-thumbnail.min.js"></script><script src="/lib/lightgallery/lg-zoom.min.js"></script><script src="/lib/clipboard/clipboard.min.js"></script><script src="/lib/sharer/sharer.min.js"></script><script src="/lib/katex/katex.min.js"></script><script src="/lib/katex/auto-render.min.js"></script><script src="/lib/katex/copy-tex.min.js"></script><script src="/lib/katex/mhchem.min.js"></script><script src="/lib/mermaid/mermaid.min.js"></script><script src="/lib/cookieconsent/cookieconsent.min.js"></script><script>window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":10},"comment":{"gitalk":{"admin":["f0-x"],"clientID":"60eb8e8e31fc637ce015","clientSecret":"4a6eaba4e2d62428a8a1c85347e2d5e873a65898","id":"2024-06-08T00:00:00+01:15","owner":"f0-x","repo":"f0-x.github.io","title":"How I Approach State Management on React"}},"cookieconsent":{"content":{"dismiss":"Agree","link":"Learn more","message":"Notice. This blog uses cookies to provide necessary website functionality, improve your experience and analyze our traffic. By using our website, you agree to our Privacy Policy and our cookies usage."},"enable":true,"palette":{"button":{"background":"#f0f0f0"},"popup":{"background":"#1aa3ff"}},"theme":"edgeless"},"data":{"id-1":"flowchart TD\n    start[Picking a React State Approach] --\u003e|No| isForm{Form?}\n    isForm --\u003e|Yes| formState[\"fa:fa-address-book Form state\"\u003cbr\u003euseState\u003cbr\u003euseReducer\u003cbr\u003eFormik\u003cbr\u003eReact Hook Form\u003cbr\u003eTanstack Form]\n    isForm --\u003e|No| isMultipleComponents{For multiple components?}\n    isMultipleComponents --\u003e|No| plainState[\"fa:fa-image Plain state\"\u003cbr\u003euseState\u003cbr\u003euseReducer]\n    isMultipleComponents --\u003e|Yes| isFetched{Fetched?}\n    isFetched --\u003e|No| propDrillOrGlobalState[\"fa:fa-globe Prop drill or global state\"\u003cbr\u003elocalStorage\u003cbr\u003ecookie\u003cbr\u003eIndexedDB\u003cbr\u003eRedux\u003cbr\u003eZustand\u003cbr\u003eRecoil\u003cbr\u003eJotai\u003cbr\u003eValtio]\n    isFetched --\u003e|Yes| isShareableViaURL{Sharable via URL?}\n    isShareableViaURL --\u003e|No| isMultipleComponents2{For multiple components?}\n    isMultipleComponents2 --\u003e|No| routeState[\"fa:fa-bookmark Route state\"\u003cbr\u003eReact Router loader\u003cbr\u003eTanstack Router loader]\n    isMultipleComponents2 --\u003e|Yes| remoteState[\"fa:fa-at Remote state\"\u003cbr\u003eTanstack Query\u003cbr\u003eswr\u003cbr\u003eRTK Query\u003cbr\u003eApollo]\n    isShareableViaURL --\u003e|Yes| useURL[\"fa:fa-bookmark Use URL\"]\n\n    classDef startNode fill:#FAB005,stroke:#734200,stroke-width:2px,color:#000;\n    classDef decisionNode fill:#FFE0B2,stroke:#734200,stroke-width:2px,color:#000;\n    classDef solutionNode fill:#5FC78B,stroke:#1D5C36,stroke-width:2px,color:#000;\n\n    start:::startNode;\n    isForm:::decisionNode;\n    isMultipleComponents:::decisionNode;\n    isFetched:::decisionNode;\n    isShareableViaURL:::decisionNode;\n    isMultipleComponents2:::decisionNode;\n    formState:::solutionNode;\n    plainState:::solutionNode;\n    propDrillOrGlobalState:::solutionNode;\n    routeState:::solutionNode;\n    remoteState:::solutionNode;\n    useURL:::solutionNode;\n\n    linkStyle 0 stroke:#734200,stroke-width:2px;"},"lightGallery":{"actualSize":false,"exThumbImage":"data-thumbnail","hideBarsDelay":2000,"selector":".lightgallery","speed":400,"thumbContHeight":80,"thumbWidth":80,"thumbnail":true},"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"highlightTag":"em","lunrIndexURL":"/index.json","maxResultLength":10,"noResultsFound":"No results found","snippetLength":30,"type":"lunr"}};</script><script src="/js/theme.min.js"></script></body></html>
