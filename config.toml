@@ -376,3 +376,4 @@ enableEmoji = true
   page = ["HTML"]
   section = ["HTML", "RSS"]
   taxonomy = ["HTML", "RSS"]
+  taxonomyTerm = ["HTML"]
