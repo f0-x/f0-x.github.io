@@ -222,6 +222,8 @@ The real win here wasn't just creating a technical solution - it actually solved
 
 When we first deployed this to production, I was actually surprised by how much throughput improved. Transactions that used to get backed up during peak hours now sailed through without a hitch. And the best part? We didn't need to add any extra hardware to make it happen. You're welcome DevOps team! 😉
 
+{{< figure src="images/client-satisfaction-confirmation.png" caption="*Happy Client, Happy Life*😁">}}
+
 I was particularly nervous about failure scenarios (there's nothing worse than a dispenser incorrectly dispensing cash!), but after few weeks in production, the error recovery has been rock solid. We've had network blips and even a few server restarts, but transactions either complete correctly or roll back safely.
 {{< /admonition >}}
 
