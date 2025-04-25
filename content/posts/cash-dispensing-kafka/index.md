@@ -4,7 +4,7 @@ publishDate = 2025-04-25T00:00:00+01:15
 lastmod = 2025-04-25T11:24:47+05:45
 tags = ["python", "asyncio", "kafka"]
 categories = ["system-design", "architecture", "concurrency"]
-draft = false
+draft = true
 featuredImage = "images/cover-image-cash-dispenser.jpeg"
 featuredImagePreview = "./posts/cash-dispensing-kafka/images/Designer.jpeg"
 +++
