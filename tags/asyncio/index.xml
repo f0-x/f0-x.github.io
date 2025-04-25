@@ -3,10 +3,10 @@
         <title>asyncio - Tag - Sushant Rajbanshi</title>
         <link>https://f0-x.github.io/tags/asyncio/</link>
         <description>asyncio - Tag - Sushant Rajbanshi</description>
-        <generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Sun, 06 Apr 2025 00:00:00 &#43;0115</lastBuildDate><atom:link href="https://f0-x.github.io/tags/asyncio/" rel="self" type="application/rss+xml" /><item>
+        <generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Fri, 25 Apr 2025 00:00:00 &#43;0115</lastBuildDate><atom:link href="https://f0-x.github.io/tags/asyncio/" rel="self" type="application/rss+xml" /><item>
     <title>Scalable Cash Dispensing via Kafka Concurrency</title>
     <link>https://f0-x.github.io/posts/cash-dispensing-kafka/</link>
-    <pubDate>Sun, 06 Apr 2025 00:00:00 &#43;0115</pubDate><guid>https://f0-x.github.io/posts/cash-dispensing-kafka/</guid>
+    <pubDate>Fri, 25 Apr 2025 00:00:00 &#43;0115</pubDate><guid>https://f0-x.github.io/posts/cash-dispensing-kafka/</guid>
     <description><![CDATA[<div class="featured-image">
                 <img src="/images/cover-image-cash-dispenser.jpeg" referrerpolicy="no-referrer">
             </div>We&rsquo;ve all experienced that moment of relief when an ATM successfully dispenses our cash. But behind that simple transaction lies a complex dance of systems working together. In this post, I&rsquo;ll walk you through how I tackled the challenge of processing cash dispense requests at scale using Apache Kafka and Python&rsquo;s asyncio.
