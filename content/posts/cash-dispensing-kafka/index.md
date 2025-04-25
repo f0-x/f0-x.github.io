@@ -1,7 +1,7 @@
 +++
 title = "Scalable Cash Dispensing via Kafka Concurrency"
-publishDate = 2025-03-27T00:00:00+01:15
-lastmod = 2025-03-27T11:24:47+05:45
+publishDate = 2025-04-25T00:00:00+01:15
+lastmod = 2025-04-25T11:24:47+05:45
 tags = ["python", "asyncio", "kafka"]
 categories = ["system-design", "architecture", "concurrency"]
 draft = false
@@ -43,7 +43,66 @@ That's when I realized I needed something in between - parallel processing where
 
 ## My Solution: Location-Based Semaphores with Asyncio
 
-{{< figure src="images/Cash Microservice - Paralle Processing Per Location Advanced.svg" caption="*Looks simple but is PITA to implement* 🙄">}}
+{{< mermaid >}}
+flowchart TD
+    subgraph KafkaBroker["Apache Kafka Broker"]
+        topic["Topic: transaction_cash_payments\nWith Multiple Partitions"]
+        partitioning["Messages Partitioned by Location\n(Hash of location key)"]
+        partition0["Partition 0\nLocation A,D,G"]
+        partition1["Partition 1\nLocation B,E,H"]
+        partition2["Partition 2\nLocation C,F,I"]
+
+        topic --> partitioning
+        partitioning --> partition0
+        partitioning --> partition1
+        partitioning --> partition2
+    end
+
+    consumer["Python Consumer Service"]
+    processing["Message Processing"]
+    semaphores["Location-Based Semaphores (Control\nconcurrent processing)"]
+
+    partition0 --> consumer
+    partition1 --> consumer
+    partition2 --> consumer
+    consumer --> processing
+    processing --> semaphores
+
+    locA["Location A\nProcessing"]
+    locB["Location B\nProcessing"]
+    locC["Location C\nProcessing"]
+
+    semaphores --> locA
+    semaphores --> locB
+    semaphores --> locC
+
+    dispA["Cash Dispenser\nLocation A"]
+    dispB["Cash Dispenser\nLocation B"]
+    dispC["Cash Dispenser\nLocation C"]
+
+    locA --> dispA
+    locB --> dispB
+    locC --> dispC
+
+    compA["Complete Transaction\nLocation A"]
+    compB["Complete Transaction\nLocation B"]
+    compC["Complete Transaction\nLocation C"]
+
+    dispA --> compA
+    dispB --> compB
+    dispC --> compC
+
+    style partition0 fill:#ffccff
+    style partition1 fill:#ffccff
+    style partition2 fill:#ffccff
+    style locA fill:#99ffcc
+    style locB fill:#99ffcc
+    style locC fill:#99ffcc
+    style semaphores fill:#ffffcc
+{{< /mermaid >}}
+
+
+<!-- {{< figure src="images/Cash Microservice - Paralle Processing Per Location Advanced.svg" caption="*Looks simple but is PITA to implement* 🙄">}} -->
 
 The heart of our solution combines Kafka's distributed messaging with Python asyncio's concurrency primitives to create a system that processes transactions in parallel while maintaining safety constraints.
 
