@@ -6,7 +6,7 @@ tags = ["python", "asyncio", "kafka"]
 categories = ["system-design", "architecture", "concurrency"]
 draft = false 
 featuredImage = "images/cover-image-transaction-processing.jpeg"
-featuredImagePreview = "./posts/cash-dispensing-kafka/images/Designer.jpeg"
+featuredImagePreview = "./posts/transactions-processing-kafka/images/Designer.jpeg"
 +++
 
 We've all experienced that moment of waiting for a transaction to complete. Behind that simple operation lies a complex dance of systems working together. In this post, I'll walk you through how you can tackle the challenge of processing financial(or any other) transactions at scale using [Apache Kafka](https://kafka.apache.org/intro#intro_nutshell) and Python's [asyncio](https://docs.python.org/3/library/asyncio.html).
