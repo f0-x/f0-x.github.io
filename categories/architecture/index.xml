@@ -1,0 +1,16 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>architecture - Category - Sushant Rajbanshi</title>
+        <link>https://f0-x.github.io/categories/architecture/</link>
+        <description>architecture - Category - Sushant Rajbanshi</description>
+        <generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Fri, 25 Apr 2025 00:00:00 &#43;0115</lastBuildDate><atom:link href="https://f0-x.github.io/categories/architecture/" rel="self" type="application/rss+xml" /><item>
+    <title>Scalable Transactions Processing via Kafka Concurrency</title>
+    <link>https://f0-x.github.io/posts/transactions-processing-kafka/</link>
+    <pubDate>Fri, 25 Apr 2025 00:00:00 &#43;0115</pubDate><guid>https://f0-x.github.io/posts/transactions-processing-kafka/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="/images/cover-image-transaction-processing.jpeg" referrerpolicy="no-referrer">
+            </div>We&rsquo;ve all experienced that moment of waiting for a transaction to complete. Behind that simple operation lies a complex dance of systems working together. In this post, I&rsquo;ll walk you through how you can tackle the challenge of processing financial(or any other) transactions at scale using Apache Kafka and Python&rsquo;s asyncio.
+A common challenge while dealing with distributed financial systems - how to allow multiple transactions to happen simultaneously across different locations while making sure we never had conflicting operations at any single processing point.]]></description>
+</item>
+</channel>
+</rss>
